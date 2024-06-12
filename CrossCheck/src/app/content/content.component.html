@@ -1,0 +1,58 @@
+<div class="content">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+      
+        <!-- Sl. No Column -->
+        <ng-container matColumnDef="position">
+          <th mat-header-cell *matHeaderCellDef> SL. No. </th>
+          <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+        </ng-container>
+      
+        <!-- US Story Column -->
+        <ng-container matColumnDef="usstory">
+          <th mat-header-cell *matHeaderCellDef> US Story </th>
+          <td mat-cell *matCellDef="let element"> {{element.usstory}} </td>
+        </ng-container>
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="description">
+          <th mat-header-cell *matHeaderCellDef> Description </th>
+          <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+        </ng-container>
+      
+        <!-- Weight Column -->
+        <ng-container matColumnDef="testcasecount">
+          <th mat-header-cell *matHeaderCellDef> Testcase Count </th>
+          <td mat-cell *matCellDef="let element"> {{element.testcasecount}} </td>
+        </ng-container>
+      
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="executed">
+          <th mat-header-cell *matHeaderCellDef> Executed </th>
+          <td mat-cell *matCellDef="let element"> {{element.executed}} </td>
+        </ng-container>
+      
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="passed">
+            <th mat-header-cell *matHeaderCellDef> Passed </th>
+            <td mat-cell *matCellDef="let element"> {{element.passed}} </td>
+          </ng-container>
+      
+          <!-- Symbol Column -->
+        <ng-container matColumnDef="failed">
+          <th mat-header-cell *matHeaderCellDef> Failed </th>
+          <td mat-cell *matCellDef="let element"> {{element.failed}} </td>
+        </ng-container>
+      
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="pending">
+            <th mat-header-cell *matHeaderCellDef> Pending </th>
+            <td mat-cell *matCellDef="let element"> {{element.pending}} </td>
+          </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>    
+</div>
