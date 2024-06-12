@@ -25,7 +25,8 @@ import { FormGroup, FormControl, FormsModule } from '@angular/forms';
 import { MatFormFieldModule, MatFormFieldControl } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select'
 import { MatInputModule } from '@angular/material/input';
-import { HttpClientModule } from '@angular/common/http'; 
+import { HttpClientModule } from '@angular/common/http';
+import { SearchComponent } from './search/search.component'; 
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { HttpClientModule } from '@angular/common/http';
     NavComponent,
     ButtonComponent,
     TextareaComponent,
-    ExecutionformComponent
+    ExecutionformComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

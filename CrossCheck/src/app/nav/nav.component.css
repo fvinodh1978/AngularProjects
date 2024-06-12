@@ -1,6 +1,7 @@
 .navbar{
     display: flex;
     background-color:rgb(42, 106, 246);
+    width: 100%;
 }
 .site-name{
     padding: 5px 30px;
