@@ -1,13 +1,17 @@
-<div class="content">
-  <mat-toolbar >
+<div class="container"> 
+  <mat-toolbar color="primary" class="toolbar">
     <button mat-icon-button aria-label="Menu icon" (click)="toggleMenu()">
+      <!-- <button mat-icon-button aria-label="Menu icon" (click)="toggleMenu()"> -->
       <mat-icon>menu</mat-icon>
     </button>
-    <!-- <h1>Cross Check</h1> -->
-    <app-nav></app-nav>
+    <h1>Cross Check</h1>
+    <!-- <app-nav></app-nav> -->
   </mat-toolbar>
   
-  <mat-sidenav-container autosize>
+  <!-- <mat-sidenav-container autosize> -->
+   <mat-sidenav-container>
+    <!-- <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" -->
+                 <!-- [fixedInViewport]="mobileQuery.matches" fixedTopGap="56"> -->
     <mat-sidenav [opened]="true" mode="side" [mode]="isMobile ? 'over' : 'side'" [opened]="isMobile ? 'false' : 'true'">
     <!--<mat-sidenav [mode]="isMobile ? 'over' : 'side'" [opened]="isMobile ? 'false' : 'true'"> -->
       <mat-nav-list>
@@ -48,12 +52,12 @@
         </span>
       </mat-nav-list>
     </mat-sidenav>
-    <mat-sidenav-content>
+    <mat-sidenav-content class ="content">
       <div class="header">Testcase Status as on June 2024</div>
       <!-- <app-statustable></app-statustable> -->
       <app-executionform></app-executionform>
-      <router-outlet></router-outlet>
-      <app-content></app-content>
+      <!-- <router-outlet></router-outlet> -->
+      <!-- <app-content></app-content> -->
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>

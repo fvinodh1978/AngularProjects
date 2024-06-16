@@ -2,6 +2,17 @@ h1 {
     padding: 0 1rem;
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+ }
+  
+
 .header {
     /* padding: 1rem; */
     text-align: center;
@@ -16,9 +27,11 @@ mat-toolbar{
     background-color:rgb(42, 106, 246);
 }
 
-mat-sidenav-container {
-    height:100%;
 
+
+mat-sidenav-container {
+    /* height:100%; */
+    flex: 1;
 }
 
 /* Move the content down so that it won't be hidden by the toolbar*/
@@ -43,10 +56,6 @@ mat-sidenav-content{
     @media screen and (min-width: 600px) {
         padding-top: 4rem;
     }
-    width: 100%;
-}
-
-.content{
-    height:100%;
-    width:100%
+    /* width: 100%; */
+    background-color: white;
 }

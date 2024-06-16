@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { RestApiService } from '../rest-api.service';
+import { FormAttributes } from './formattributes';
+import { Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-executionform',
@@ -7,6 +9,8 @@ import { RestApiService } from '../rest-api.service';
   styleUrl: './executionform.component.css'
 })
 export class ExecutionformComponent {
+  @Input() label: string = "Click Me";
+  formattributes = new FormAttributes();
   constructor(private RestApiService: RestApiService) { }
   // showText() {
   //   this.displayText = this.userInput;
@@ -25,12 +29,12 @@ export class ExecutionformComponent {
 
   handleButtonClick(event: MouseEvent): void {
 
-    this.RestApiService.getAllData().subscribe((response) => {
+    // this.RestApiService.getAllData().subscribe((response) => {
+      this.RestApiService.runPostRequest().subscribe((response) => {      
       console.log('API response:', response);
       // this.rapidPage= response[0]['testCaseName'];
       this.rapidPage = JSON.stringify(response);
     });
-
 
     console.log('Button clicked!', event);
     console.log('Input 1:', this.input1);

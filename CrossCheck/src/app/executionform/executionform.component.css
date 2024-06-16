@@ -1,11 +1,12 @@
 .executionform{
-
     display: flex;
     flex-direction: column;
     width: 100%;
     align-items: center;
 }
 
+
 .textarea{
   width: 100%;
+  height: auto;
 }
