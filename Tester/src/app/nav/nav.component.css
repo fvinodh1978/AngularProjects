@@ -1,0 +1,21 @@
+.navbar{
+    display: flex;
+    background-color: rgb(0, 166, 255);
+    height: 60px;
+    align-items: center;
+}
+
+.site-name{
+    color: blue;
+    padding: 5px 30px;
+}
+
+.site-menu{
+    padding: 10px 30px;
+    margin-left: 100px;
+}
+a{
+    text-decoration: none;
+    color: azure;
+    margin: 0px 10px;
+}
