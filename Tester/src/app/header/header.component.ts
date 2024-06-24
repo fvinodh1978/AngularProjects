@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-
+  slogan: string = "Tester : Your One Stop Solution for Quality Assurance...";
+  logoimg: string = "/assets/shopping.jpg";
+  getSlogan() {
+    return this.slogan;
+  }
 }

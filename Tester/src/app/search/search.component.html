@@ -1,0 +1,7 @@
+<div class="search-div">
+    <!-- <span><b>Search:</b></span> -->
+    <label for="Search">Search:</label>
+    <!-- <input type="text" value={{initialiseSearch}} id="Search" (input)="changeSearchValue($event)" onfocus="this.value=''"> -->
+    <input type="text" [(ngModel)]="searchValue" onfocus="this.value=''">
+    <span>You Searched for "{{searchValue}}"</span>
+</div>  
