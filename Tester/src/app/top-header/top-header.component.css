@@ -1,0 +1,10 @@
+.top-header {
+    height: 7vh;
+    background-color: orange;
+    text-align: center;
+    color: white;
+    padding-top: 1.5vh;
+    font-size: 16px;
+    font-weight: bold;
+    align-items: center;
+}

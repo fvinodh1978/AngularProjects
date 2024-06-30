@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   slogan: string = "Tester : Your One Stop Solution for Quality Assurance...";
-  logoimg: string = "/assets/shopping.jpg";
+  logoimg: string = "../assets/shopping.jpg";
   getSlogan() {
     return this.slogan;
   }

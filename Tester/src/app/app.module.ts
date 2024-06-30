@@ -9,6 +9,14 @@ import { HeaderComponent } from './header/header.component';
 import { NotificationComponent } from './notification/notification.component';
 import { SearchComponent } from './search/search.component';
 import { FormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { AccountComponent } from './account/account.component';
+import { TopHeaderComponent } from './top-header/top-header.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,14 +24,21 @@ import { FormsModule } from '@angular/forms';
     NavComponent,
     HeaderComponent,
     NotificationComponent,
-    SearchComponent
+    SearchComponent,
+    AccountComponent,
+    TopHeaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

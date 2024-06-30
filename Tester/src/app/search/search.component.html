@@ -1,7 +1,19 @@
-<div class="search-div">
-    <!-- <span><b>Search:</b></span> -->
-    <label for="Search">Search:</label>
-    <!-- <input type="text" value={{initialiseSearch}} id="Search" (input)="changeSearchValue($event)" onfocus="this.value=''"> -->
-    <input type="text" [(ngModel)]="searchValue" onfocus="this.value=''">
-    <span>You Searched for "{{searchValue}}"</span>
-</div>  
+<!-- <div class="search-bar">
+    <input class="search-box" [value]="searchValue" onfocus="this.value=''">
+    <button class="btn btn-search">Search</button>
+</div> -->
+
+<div class="input-group mb-3 search-bar" style="max-width: 450px; ">
+    <!-- <input type="text" class="form-control" style="height: 39px;" [(ngModel)]="searchValue" onfocus="this.value=''"> -->
+    <input type="text" class="form-control search-box" [value]="searchValue" style="height: 39px;"
+    (input)="getSearchItem($event)" onfocus="this.value=''">
+    <button class="btn btn-outline-secondary " type="button" style="height: 39px;" (click)="handleSearch(searchValue)">
+        <i class="fa-light fa fa-search" style="color: black;" aria-hidden="true"></i>
+    </button>
+</div>
+
+<div class="search-result" *ngFor="let item of products">
+    <p>
+        <strong>{{item}} : Search Result for : </strong>{{searchValue}}
+    </p>
+</div>

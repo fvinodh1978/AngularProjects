@@ -1,15 +1,16 @@
-.header{
+.header {
     height: 240px;
     padding: 30px 40px;
     display: flex;
 }
 
-.site-slogan{
+.site-slogan {
     width: 420px;
     margin-left: 50px;
     text-align: center;
 }
 
-h2{
+h2 {
     font-size: 45px;
 }
+

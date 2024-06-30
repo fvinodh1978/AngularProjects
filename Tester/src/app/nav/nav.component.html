@@ -2,12 +2,21 @@
     <div class="site-name">
         <h2>{{ sitename}}</h2>
     </div>
-    <!-- <div><app-search></app-search></div> -->
-    <div class="site-menu">
-        <a href="#">Home</a>
-        <a href="#">Reports</a>
-        <a href="#">Projects</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
+
+    <div class="input-group mb-3" style="max-width: 450px; ">
+        <input type="text" class="form-control" style="height: 39px;" [(ngModel)]="searchValue" onfocus="this.value=''">
+        <button class="btn btn-outline-secondary " type="button" style="height: 39px;">
+            <i class="fa-light fa fa-search" style="color: black;" aria-hidden="true"></i>
+        </button>
+    </div>
+
+    <!-- <a href="/home">Home</a>
+    <a href="#">Reports</a>
+    <a href="#">Projects</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a> -->
+
+    <div class="site-menu" >
+        <a href="/{{item}}"  *ngFor="let item of menu">{{item}}</a>    
     </div>
 </div>
