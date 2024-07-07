@@ -16,10 +16,11 @@
 
 .btn-search {
     padding: 8px 30px;
-    background-color: #28282B;
+    /* background-color: #0e0afc; */
+    background-color:rgb(0, 166, 255);
     /* border:none; */
     margin-left: -5px;
-    margin-top: -5px;
+    margin-top: 0px;
     color: #fff;
 }
 

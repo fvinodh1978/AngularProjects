@@ -11,7 +11,7 @@ export class SearchComponent {
   menu: NavItem[] = [];
   productList: any = ["Apple", "Orange", "Banana", "Mango", "Jack"];
   products: String[] = [];
-  searchValue: string = "Search";
+  searchValue: string = "";
   initialiseSearch: string = "Type Here!!!";
   changeSearchValue(eventData: any) {
     this.searchValue = (<HTMLInputElement>eventData.target).value;

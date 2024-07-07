@@ -16,6 +16,7 @@ import { MatInputModule } from '@angular/material/input';
 import { AccountComponent } from './account/account.component';
 import { TopHeaderComponent } from './top-header/top-header.component';
 import { ProductListComponent } from './container/product-list/product-list.component';
+import { ProductComponent } from './container/product-list/product/product.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { ProductListComponent } from './container/product-list/product-list.comp
     SearchComponent,
     AccountComponent,
     TopHeaderComponent,
-    ProductListComponent
+    ProductListComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
