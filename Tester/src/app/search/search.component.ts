@@ -9,8 +9,8 @@ import { NavItem } from './nav-item';
 
 export class SearchComponent {
   menu: NavItem[] = [];
-  productList: any  = ["Apple", "Orange", "Banana", "Mango", "Jack"];
-  products: String[]=[];  
+  productList: any = ["Apple", "Orange", "Banana", "Mango", "Jack"];
+  products: String[] = [];
   searchValue: string = "Search";
   initialiseSearch: string = "Type Here!!!";
   changeSearchValue(eventData: any) {
@@ -60,6 +60,8 @@ export class SearchComponent {
     console.log(item);
     if (this.productList.indexOf(item) !== -1) {
       this.products.push(item);
+    } else {
+      this.products.push("No Item Found");
     }
     return this.products;
   }

@@ -15,6 +15,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { AccountComponent } from './account/account.component';
 import { TopHeaderComponent } from './top-header/top-header.component';
+import { ProductListComponent } from './container/product-list/product-list.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { TopHeaderComponent } from './top-header/top-header.component';
     NotificationComponent,
     SearchComponent,
     AccountComponent,
-    TopHeaderComponent
+    TopHeaderComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,

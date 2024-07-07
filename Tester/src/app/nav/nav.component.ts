@@ -6,7 +6,8 @@ import { Component } from '@angular/core';
   styleUrl: './nav.component.css'
 })
 export class NavComponent {
-  menu:String[]=["Home", "Reports", "Projects", "About", "Contact", "Services"];
+  menu:String[]=["Home", "Projects", "About", "Contact", "Services", "Login"];
+  
   logoimg: string = "../assets/logoimg.jpg";
   sitename: string = "Tester";
   searchValue: string = "Search";
