@@ -17,6 +17,7 @@ import { AccountComponent } from './account/account.component';
 import { TopHeaderComponent } from './top-header/top-header.component';
 import { ProductListComponent } from './container/product-list/product-list.component';
 import { ProductComponent } from './container/product-list/product/product.component';
+import { FilterComponent } from './container/product-list/filter/filter.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { ProductComponent } from './container/product-list/product/product.compo
     AccountComponent,
     TopHeaderComponent,
     ProductListComponent,
-    ProductComponent
+    ProductComponent,
+    FilterComponent
   ],
   imports: [
     BrowserModule,

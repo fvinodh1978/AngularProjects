@@ -1,3 +1,10 @@
+<app-filter [all]="totalProducts" [inStock]="inStockProducts" [outOfStock]="outOfStockProducts"
+(selectedFilterChange)="onFilterChange($event)">
+</app-filter>
 <div class="ekart--product--container">
-    <app-product *ngFor="let item of products" [product]="item"></app-product>
+    <div *ngFor="let item of products">
+        <app-product [product]="item" *ngIf="selectedFilter==='all' || item.isAvailable.toString()===selectedFilter"></app-product>
+    </div>
 </div>
+
+<div >
