@@ -5,6 +5,8 @@
     <!-- <div app-header></div>   -->
     <!-- Selector being used as tag-->
     <!-- <app-notification></app-notification>   -->
-    <app-search></app-search>
-    <app-product-list></app-product-list>
+    <!-- <app-search></app-search> -->
+    <app-search (searchTextChanged)="setSearchText($event)"></app-search>
+    <app-product-list [searchText]="searchValue"></app-product-list>
+    <!-- <app-product-list ></app-product-list> -->
 </div>

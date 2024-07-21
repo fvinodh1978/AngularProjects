@@ -1,4 +1,4 @@
-import { Component, Output } from '@angular/core';
+import { Component, Output, Input } from '@angular/core';
 import { ProductTemplate } from './product-template';
 
 @Component({
@@ -7,6 +7,7 @@ import { ProductTemplate } from './product-template';
   styleUrl: './product-list.component.css'
 })
 export class ProductListComponent {
+
 
 
   products = [
@@ -39,7 +40,7 @@ export class ProductListComponent {
       isAvailable: false
     }, {
       id: 4,
-      name: "Shoe",
+      name: "Flower",
       price: "150",
       category: "Running",
       colors: ["white", "blue", "black"],
@@ -48,7 +49,7 @@ export class ProductListComponent {
       isAvailable: true
     }, {
       id: 5,
-      name: "Shoe",
+      name: "Flower",
       price: "150",
       category: "Running",
       colors: ["white", "blue", "black"],
@@ -57,7 +58,7 @@ export class ProductListComponent {
       isAvailable: true
     }, {
       id: 6,
-      name: "Shoe",
+      name: "Flower",
       price: "150",
       category: "Running",
       colors: ["white", "blue", "black"],
@@ -66,7 +67,7 @@ export class ProductListComponent {
       isAvailable: true
     }, {
       id: 7,
-      name: "Shoe",
+      name: "Flower",
       price: "150",
       category: "Running",
       colors: ["white", "blue", "black"],
@@ -75,7 +76,7 @@ export class ProductListComponent {
       isAvailable: true
     }, {
       id: 8,
-      name: "Shoe",
+      name: "Flower",
       price: "150",
       category: "Running",
       colors: ["white", "blue", "black"],
@@ -84,7 +85,7 @@ export class ProductListComponent {
       isAvailable: true
     }, {
       id: 9,
-      name: "Shoe",
+      name: "Flower",
       price: "150",
       category: "Running",
       colors: ["white", "blue", "black"],
@@ -93,7 +94,7 @@ export class ProductListComponent {
       isAvailable: true
     }, {
       id: 10,
-      name: "Shoe",
+      name: "Flower",
       price: "150",
       category: "Running",
       colors: ["white", "blue", "black"],
@@ -103,14 +104,17 @@ export class ProductListComponent {
     }
   ]
 
-  totalProducts:number=this.products.length;
-  inStockProducts:number=this.products.filter(p=> p.isAvailable===true).length
-  outOfStockProducts:number=this.products.filter(p=> p.isAvailable===false).length
-  selectedFilter: string="all";
+  totalProducts: number = this.products.length;
+  inStockProducts: number = this.products.filter(p => p.isAvailable === true).length
+  outOfStockProducts: number = this.products.filter(p => p.isAvailable === false).length
+  selectedFilter: string = "all";
 
-  onFilterChange(filterValue:string){
+  @Input()
+  searchText: string = "";
+
+  onFilterChange(filterValue: string) {
     console.log(filterValue)
-    this.selectedFilter=filterValue;
+    this.selectedFilter = filterValue;
   }
 }
 

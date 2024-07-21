@@ -3,7 +3,8 @@
 </app-filter>
 <div class="ekart--product--container">
     <div *ngFor="let item of products">
-        <app-product [product]="item" *ngIf="selectedFilter==='all' || item.isAvailable.toString()===selectedFilter"></app-product>
+        <!-- <app-product [product]="item" *ngIf="selectedFilter==='all' || item.isAvailable.toString()===selectedFilter"></app-product> -->
+        <app-product [product]="item" *ngIf="searchText==='' || item.name.toLowerCase().includes(searchText)"></app-product>
     </div>
 </div>
 

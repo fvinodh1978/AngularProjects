@@ -7,7 +7,7 @@ import { ContainerComponent } from './container/container.component';
 import { NavComponent } from './nav/nav.component';
 import { HeaderComponent } from './header/header.component';
 import { NotificationComponent } from './notification/notification.component';
-import { SearchComponent } from './search/search.component';
+// import { SearchComponent } from './search/search.component';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
@@ -18,6 +18,7 @@ import { TopHeaderComponent } from './top-header/top-header.component';
 import { ProductListComponent } from './container/product-list/product-list.component';
 import { ProductComponent } from './container/product-list/product/product.component';
 import { FilterComponent } from './container/product-list/filter/filter.component';
+import { SearchComponent } from './container/search/search.component';
 
 
 @NgModule({
@@ -27,12 +28,12 @@ import { FilterComponent } from './container/product-list/filter/filter.componen
     NavComponent,
     HeaderComponent,
     NotificationComponent,
-    SearchComponent,
     AccountComponent,
     TopHeaderComponent,
     ProductListComponent,
     ProductComponent,
-    FilterComponent
+    FilterComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,

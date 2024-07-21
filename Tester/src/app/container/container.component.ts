@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrl: './container.component.css'
 })
 export class ContainerComponent {
-
+  searchValue = "";
+  setSearchText(value:string) {
+    this.searchValue = value;
+  }
 }

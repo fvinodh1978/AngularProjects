@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output} from '@angular/core';
 import { NavItem } from './nav-item';
 
 @Component({
@@ -16,6 +16,13 @@ export class SearchComponent {
   changeSearchValue(eventData: any) {
     this.searchValue = (<HTMLInputElement>eventData.target).value;
     console.log(this.searchValue);
+  }
+
+  @Output()
+  searchTextChanged : EventEmitter<string> = new EventEmitter<string>();
+  onSearchTextChanged(){
+    console.log(this.searchValue)
+    this.searchTextChanged.emit(this.searchValue);
   }
 
   getSearchItem(event: any) {
