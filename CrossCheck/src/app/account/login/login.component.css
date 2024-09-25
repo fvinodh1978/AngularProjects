@@ -1,0 +1,44 @@
+.login-form-container {
+    /* background-color: #28282B; */
+    /* border: #28282B 1px solid; */
+    /* height: 100%; */
+}
+
+.login-form {
+    background-color: white;
+    padding: 10px 30px;
+    width: 40%;
+    margin: 30px auto;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Full-width input fields */
+input[type=text],
+input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #285186;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.container {
+    padding: 16px;
+}
+
+.cancel-button-div {
+    text-align: right;
+    width: 100%;
+}

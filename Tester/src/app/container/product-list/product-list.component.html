@@ -2,9 +2,9 @@
 (selectedFilterChange)="onFilterChange($event)">
 </app-filter>
 <div class="ekart--product--container">
-    <div *ngFor="let item of products">
+    <div *ngFor="let item of products" (click)="selectedProduct=item">
         <!-- <app-product [product]="item" *ngIf="selectedFilter==='all' || item.isAvailable.toString()===selectedFilter"></app-product> -->
-        <app-product [product]="item" *ngIf="searchText==='' || item.name.toLowerCase().includes(searchText)"></app-product>
+        <app-product [product]="item" *ngIf="searchText===null || item.name.toLowerCase().includes(searchText.toLowerCase())" ></app-product>
     </div>
 </div>
 

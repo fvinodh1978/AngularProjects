@@ -9,5 +9,6 @@ export class ContainerComponent {
   searchValue = "";
   setSearchText(value:string) {
     this.searchValue = value;
+    console.log(value);
   }
 }

@@ -1,0 +1,31 @@
+<!-- <div calss="overlay"></div> -->
+<div class="login-form-container">
+    <h2 style="color:white; text-align: center;">MM | Cross Check</h2>
+    <div class="login-form">
+        <!-- <div class="cancel-button-div">
+        <i class="fa fa-times" aria-hidden="true"></i>
+      </div> -->
+        <h2>Login to Account</h2>
+        <p style="font-size:15px;">to Continue to Cross Check</p>
+        <div class="container">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" required #username>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" required #password>
+            <div>
+                <!-- <button [disabled]="loading" class="btn btn-primary">
+                    <span *ngIf="loading" class="spinner-border spinner-border-sm me-1"></span>
+                    Login
+                </button> -->
+
+                <button type="submit" (click)="OnLoginClicked()">Login</button>
+
+                <a routerLink="../register" class="btn btn-link">Register</a>
+            </div>
+            <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+        </div>
+    </div>
+</div>

@@ -1,5 +1,6 @@
 import { Component, Output, Input } from '@angular/core';
 import { ProductTemplate } from './product-template';
+import { Product } from './../../Models/Product'
 
 @Component({
   selector: 'app-product-list',
@@ -7,9 +8,7 @@ import { ProductTemplate } from './product-template';
   styleUrl: './product-list.component.css'
 })
 export class ProductListComponent {
-
-
-
+  selectedProduct: Product;
   products = [
     {
       id: 1,
@@ -110,7 +109,8 @@ export class ProductListComponent {
   selectedFilter: string = "all";
 
   @Input()
-  searchText: string = "";
+  searchText: string = null;
+
 
   onFilterChange(filterValue: string) {
     console.log(filterValue)

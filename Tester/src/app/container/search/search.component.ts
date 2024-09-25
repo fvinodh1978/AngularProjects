@@ -21,7 +21,6 @@ export class SearchComponent {
   @Output()
   searchTextChanged : EventEmitter<string> = new EventEmitter<string>();
   onSearchTextChanged(){
-    console.log(this.searchValue)
     this.searchTextChanged.emit(this.searchValue);
   }
 
@@ -29,47 +28,8 @@ export class SearchComponent {
     this.searchValue = event.target.value;
   }
 
-  handleSearch(item: String) {
-    this.productList = this.getProducts(item);
-
-    // Implement your search logic here
-
-    // this.menu= [
-    //   {
-    //     displayName: 'Dashboard',
-    //     iconName: 'desktop_windows',
-    //     route: 'dashboard',
-    //   },
-    //   {
-    //     displayName: 'Manage Access',
-    //     iconName: 'house',
-    //     route: 'mytasks',
-    //   }]
-  }
-
-  range(start: number, end: number): number[] {
-    start = Math.floor(start);
-    end = Math.floor(end);
-
-    const diff = end - start;
-    if (diff === 0) {
-      return [start];
-    }
-
-    const keys = Array(Math.abs(diff) + 1).keys();
-    return Array.from(keys).map(x => {
-      const increment = end > start ? x : -x;
-      return start + increment;
-    });
-  }
-
-  getProducts(item: String): String[] {
-    console.log(item);
-    if (this.productList.indexOf(item) !== -1) {
-      this.products.push(item);
-    } else {
-      this.products.push("No Item Found");
-    }
-    return this.products;
+  handleSearch(item: HTMLInputElement) {
+    this.searchValue=item.value
+    this.searchTextChanged.emit(this.searchValue);
   }
 }

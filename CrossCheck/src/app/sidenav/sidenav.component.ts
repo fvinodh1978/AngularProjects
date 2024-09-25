@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ViewChild } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
-import { MatSidenav } from '@angular/material/sidenav';
+
 import { NavItem } from './nav-item';
 
 @Component({

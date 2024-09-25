@@ -59,3 +59,8 @@ mat-sidenav-content{
     /* width: 100%; */
     background-color: white;
 }
+
+h2 {
+    text-align: center;
+    color: black;
+  }
