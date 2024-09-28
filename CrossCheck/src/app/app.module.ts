@@ -3,46 +3,47 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AccountComponent } from './account/account.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MatToolbarModule } from '@angular/material/toolbar'
+import { MatIconModule } from '@angular/Material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { CustomSidenavComponent } from './components/custom-sidenav/custom-sidenav.component';
+import { MatListModule } from '@angular/material/list';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { AnalyticsComponent } from './pages/analytics/analytics.component';
 import { LoginComponent } from './account/login/login.component';
 import { LogoutComponent } from './account/logout/logout.component';
-import { RegisterComponent } from './account/register/register.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { FooterComponent } from './footer/footer.component';
-import { HeaderComponent } from './header/header.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { TesterComponent } from './tester/tester.component';
-import { SidenavComponent } from './sidenav/sidenav.component';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatIconModule } from '@angular/material/icon';
-import { MatListModule } from '@angular/material/list';
-import { MatExpansionModule } from '@angular/material/expansion';
+import { SignupComponent } from './account/signup/signup.component';
+import { RouterModule } from '@angular/router';
+import { HomeComponent } from './pages/home/home.component';
+import { ManagetestsComponent } from './pages/managetests/managetests.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AccountComponent,
+    CustomSidenavComponent,
+    DashboardComponent,
+    AnalyticsComponent,
     LoginComponent,
     LogoutComponent,
-    RegisterComponent,
-    FooterComponent,
-    HeaderComponent,
-    DashboardComponent,
-    TesterComponent,
-    SidenavComponent,
+    SignupComponent,
+    HomeComponent,
+    ManagetestsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule,
     MatToolbarModule,
-    MatSidenavModule,
+    MatButtonModule,
     MatIconModule,
+    MatSidenavModule,
     MatListModule,
-    MatExpansionModule
+    RouterModule
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

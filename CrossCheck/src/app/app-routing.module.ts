@@ -1,20 +1,45 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { AnalyticsComponent } from './pages/analytics/analytics.component';
 import { LoginComponent } from './account/login/login.component';
-import { RegisterComponent } from './account/register/register.component';
-import { TesterComponent } from './tester/tester.component';
+import { HomeComponent } from './pages/home/home.component';
+import { ManagetestsComponent } from './pages/managetests/managetests.component';
 
-//DEFINE ROUTE
 const routes: Routes = [
-
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'tester', component: TesterComponent }
-]
+  { 
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'login'
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'home',
+    component: HomeComponent
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent
+  },
+  {
+    path: 'users',
+    component: AnalyticsComponent
+  },
+  {
+    path: 'analytics',
+    component: AnalyticsComponent
+  },
+  {
+    path: 'tests',
+    component: ManagetestsComponent
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-

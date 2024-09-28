@@ -1,10 +1,26 @@
-<div class="main-page-container">
-  <app-header *ngIf="router.url !== '/login'"></app-header>
+<mat-toolbar class="mat-elevation-z3">
+  <button mat-icon-button (click)="collapsed.set(!collapsed())">
+    <mat-icon>
+      menu
+    </mat-icon>
+  </button>
+  <button mat-icon-button>
+    <mat-icon class="account-icon">
+      notifications_none
+    </mat-icon>
+  </button>
+  <button mat-icon-button>
+    <mat-icon class="account-icon">
+      account_circle
+    </mat-icon>
+  </button>
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav opened mode="side" [style.width]="sidenavWidth()">
+    <app-custom-sidenav [collapsed]="collapsed()"></app-custom-sidenav>
+  </mat-sidenav>
 
-  <!-- <app-home></app-home> -->
-  <!-- <app-contact></app-contact> -->
-  <!-- <app-about></app-about> -->
-  <!-- <app-courses></app-courses> -->
-  <router-outlet></router-outlet>  
-  <app-footer></app-footer>
-</div>
+  <mat-sidenav-content class="content" [style.margin-left]="sidenavWidth()">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
