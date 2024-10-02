@@ -1,0 +1,49 @@
+<div class="login-form-container">
+    <h2 style="color:#ffffff; font: bold; text-align: center; font-size:x-large; padding : 10px">MM | Cross Check</h2>
+    <div class="form-container">
+        <h2 style="font-size:x-large;">Login to Account</h2>
+        <form action="" [formGroup]="loginForm" (ngSubmit)="submit()">
+            <mat-form-field>
+                <input matInput placeholder="User Name" formControlName="username">
+                <mat-error *ngIf="username?.errors?.['required']">
+                    User Name is Required
+                </mat-error>
+                <!-- <mat-error *ngIF="email?.errors?.['email']">
+                    Please enter a corrent email format
+                </mat-error> -->
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Password" formControlName="password" type="password">
+                <mat-error *ngIf="password?.errors?.['required']">
+                    Password is Required
+                </mat-error>
+            </mat-form-field>
+            <div class="center margin-top">
+                <button mat-raised-button color="primary" type="submit" >Login</button>
+                <!-- routerLink="/home" -->
+            </div>
+            <span class="center margin-top">New to our Platform?<a class="sign-up-link" routerLink="/signup"> Register Here!</a></span>
+        </form>
+    </div>
+    <mat-divider class="thick-divider"></mat-divider>
+    <div class="social-icons">
+        <button mat-icon-button class="facebook">
+            <mat-icon [style]="'background-color: white; border-radius: 100%;'">facebook</mat-icon>
+        </button>
+        <button mat-icon-button class="twitter">
+            <mat-icon [style]="'background-color: white; border-radius: 100%;'">twitter</mat-icon>
+        </button>
+        <button mat-icon-button class="linkedin">
+            <mat-icon [style]="'background-color: white; border-radius: 100%;'">linkedin</mat-icon>
+        </button>
+        <button mat-icon-button class="dribbble">
+            <mat-icon [style]="'background-color: white; border-radius: 100%;'">dribbble</mat-icon>
+        </button>
+    </div>
+    <div>
+        <p class="copyright-text">Copyright &copy; 2024 All Rights Reserved by
+            <a href="https://www.marchmindtech.com/" style="color:white;">MarchMind Technologies</a>.
+        </p>
+    </div>
+    <!-- <app-footer></app-footer> -->
+</div>

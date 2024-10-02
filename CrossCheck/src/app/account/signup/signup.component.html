@@ -1,0 +1,42 @@
+<div class="login-form-container">
+    <h2 style="color:#ffffff; font: bold; text-align: center; font-size:x-large; padding : 10px">MM | Cross Check</h2>
+    <div class="form-container">
+        <h2 style="font-size:x-large;">New User Registration</h2>
+        <form action="" [formGroup]="signUpForm" (ngSubmit)="submit()">
+            <mat-form-field>
+                <input matInput placeholder="User Name" formControlName="username">
+                <mat-error *ngIf="email?.errors?.['required']">
+                    Name is Required
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Email Address" formControlName="email">
+                <mat-error *ngIf="email?.errors?.['required']">
+                    Email is Required
+                </mat-error>
+                <mat-error *ngIf="email?.errors?.['email']">
+                    Please enter a corrent email format
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Password" formControlName="password" type="password">
+                <mat-error *ngIf="password?.errors?.['required']">
+                    Password is Required
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Confirm Password" formControlName="confirmPassword" type="password">
+                <mat-error *ngIf="password?.errors?.['required']">
+                    Confirm Password is Required
+                </mat-error>
+            </mat-form-field>
+            <mat-error *ngIf="signUpForm.errors?.['passwordsDontMatch']">
+                Password Should Match!
+            </mat-error>
+            <div class="center margin-top">
+                <button mat-raised-button color="primary" type="submit" >Sign Up!</button>
+            </div>
+        </form>
+    </div>
+    <!-- <app-footer></app-footer> -->
+</div>

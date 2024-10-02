@@ -1,14 +1,11 @@
 <div class="input-group mb-3 search-bar" style="max-width: 450px; ">
-    <input type="text" class="form-control search-box" style="height: 39px;" [(ngModel)]="searchValue"
-        onfocus="this.value=''" (input)="onSearchTextChanged()">
-    <!-- <input type="text" class="form-control search-box" [value]="searchValue" style="height: 39px;" -->
-    <!-- (input)="getSearchItem($event)" onfocus="this.value=''"> -->
-
-    <!-- <button [ngClass]="{'btn':true, 'btn-search-disabled' : !searchValue, 'btn-search' : searchValue, 'btn-outline-secondary':searchValue}" [disabled]="!searchValue"  type="button" style="height: 39px;" (click)="handleSearch(searchValue)"> -->
+    <input type="text" class="form-control search-box" style="height: 39px;" onfocus="this.value=null" #searchInput>
+    <!-- [(ngModel)]="searchValue"> -->
     <button
         [ngClass]="{'btn':true, 'btn-search-disabled' : !searchValue, 'btn-search' : searchValue, 'btn-outline-secondary':searchValue}"
-        [disabled]="!searchValue" type="button" style="height: 39px;">
-    <i class="fa-light fa fa-search" style="color: black;" aria-hidden="true"></i>
+        type="button" style="height: 39px;" (click)="handleSearch(searchInput)">
+        <!-- [disabled]="!searchValue"  -->
+        <i class="fa-light fa fa-search" style="color: black;" aria-hidden="true"></i>
     </button>
 </div>
 <div>
@@ -16,8 +13,3 @@
         <strong>Search Result for : </strong>{{searchValue}}
     </p>
 </div>
-<!-- <div class="search-result" *ngFor="let item of products">
-    <p>
-        {{searchValue}} : {{item}}
-    </p>
-</div> -->

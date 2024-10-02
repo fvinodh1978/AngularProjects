@@ -1,0 +1,98 @@
+.login-form-container {
+  background-color: #1f5088;
+  /* background-color: white; */
+  padding: 40px 0px 70px 0px;
+  /* height: calc(100vh - 200px); */
+  height: calc(100vh - 110px);
+  align-items: center;
+  justify-content: center;
+}
+
+.form-container {
+  display: block;
+  max-width: 350px;
+  margin: auto;
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  border-color: #ee0c40;
+  border-width: 10px;
+}
+
+.form-container mat-form-field {
+  width: 100%;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.margin-top {
+  margin-top: 16px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.sign-up-link {
+  font-size: 1rem;
+  margin-left: 8px;
+}
+
+
+.thick-divider {
+  height: 1px;
+  /* margin:auto; */
+  margin: 75px 0px 0px 180px;
+  width: 70%;
+  /* Adjust the thickness as needed */
+  background-color: white;
+  /* Optional: Change the color */
+  display: flex;
+}
+
+::ng-deep .facebook:hover,
+.facebook:focus,
+.facebook:active
+ {
+  background-color: white; /* Change to your desired color */
+  color: black; /* Optional: Change icon color */
+}
+
+::ng-deep .linkedin:hover,
+.facebook:focus,
+.facebook:active
+ {
+  background-color: white; /* Change to your desired color */
+  color: black; /* Optional: Change icon color */
+}
+
+::ng-deep .twitter:hover,
+.facebook:focus,
+.facebook:active
+ {
+  background-color: white; /* Change to your desired color */
+  color: black; /* Optional: Change icon color */
+}
+
+::ng-deep .dribbble:hover,
+.facebook:focus,
+.facebook:active
+ {
+  background-color: white; /* Change to your desired color */
+  color: black; /* Optional: Change icon color */
+}
+
+.social-icons{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.copyright-text{
+  text-align:center;
+  color:white;
+  font-size: small;
+}
