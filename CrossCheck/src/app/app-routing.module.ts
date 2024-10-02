@@ -5,6 +5,7 @@ import { AnalyticsComponent } from './pages/analytics/analytics.component';
 import { LoginComponent } from './account/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ManagetestsComponent } from './pages/managetests/managetests.component';
+import { SignupComponent } from './account/signup/signup.component';
 
 const routes: Routes = [
   { 
@@ -15,6 +16,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'signup',
+    component: SignupComponent
   },
   {
     path: 'home',

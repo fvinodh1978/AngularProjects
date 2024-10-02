@@ -5,7 +5,7 @@ import { MenuItem } from './menu-item';
 @Component({
   selector: 'app-custom-sidenav',
   templateUrl: './custom-sidenav.component.html',
-  styleUrl: './custom-sidenav.component.scss'
+  styleUrl: './custom-sidenav.component.css'
 })
 export class CustomSidenavComponent {
 

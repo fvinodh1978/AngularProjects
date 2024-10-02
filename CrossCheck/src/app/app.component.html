@@ -1,26 +1,46 @@
-<mat-toolbar class="mat-elevation-z3">
-  <button mat-icon-button (click)="collapsed.set(!collapsed())">
-    <mat-icon>
-      menu
-    </mat-icon>
-  </button>
-  <button mat-icon-button>
-    <mat-icon class="account-icon">
-      notifications_none
-    </mat-icon>
-  </button>
-  <button mat-icon-button>
-    <mat-icon class="account-icon">
-      account_circle
-    </mat-icon>
-  </button>
-</mat-toolbar>
-<mat-sidenav-container>
-  <mat-sidenav opened mode="side" [style.width]="sidenavWidth()">
-    <app-custom-sidenav [collapsed]="collapsed()"></app-custom-sidenav>
-  </mat-sidenav>
+<div>
+  <div *ngIf="router.url !== '/login' && router.url !== '/signup'">
+    <mat-toolbar class="mat-elevation-z3">
+      <button mat-icon-button (click)="collapsed.set(!collapsed())">
+        <mat-icon>
+          menu
+        </mat-icon>
+      </button>
+      <button mat-icon-button class="notify-icon">
+        <mat-icon>
+          notifications_none
+        </mat-icon>
+      </button>
+      <button mat-icon-button class="account-icon">
+        <mat-icon>
+          account_circle
+        </mat-icon>
+      </button>
+    </mat-toolbar>
+    <mat-sidenav-container class="matsidenav-container">
+      <mat-sidenav opened mode="side" [style.width]="sidenavWidth()">
+        <app-custom-sidenav [collapsed]="collapsed()"></app-custom-sidenav>
+      </mat-sidenav>
 
-  <mat-sidenav-content class="content" [style.margin-left]="sidenavWidth()">
+      <mat-sidenav-content class="content" [style.margin-left]="sidenavWidth()">
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+
+    </mat-sidenav-container>
+    <!-- <div>
+      <app-footer></app-footer>
+    </div> -->
+  </div>
+
+  <div *ngIf="router.url == '/' || router.url == '/login' || router.url == '/signup'" height="100%">
     <router-outlet></router-outlet>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+    <!-- <app-footer></app-footer> -->
+  </div>
+</div>
+
+<!-- <div class="app-container">
+  <div *ngIf="router.url == '/' || router.url == '/login'" height="100%">
+    <app-login></app-login>
+    <app-footer></app-footer>
+  </div>
+</div> -->

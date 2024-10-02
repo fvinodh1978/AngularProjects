@@ -1,0 +1,41 @@
+.login-form-container {
+    background-color: #1f5088;
+    padding: 40px 0px 70px 0px;
+    /* height: calc(100vh - 200px); */
+    height: calc(100vh - 110px);
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .form-container {
+    display: block;
+    max-width: 350px;
+    margin: auto;
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    border-color: #ee0c40;
+    border-width: 10px;
+  }
+  
+  .form-container mat-form-field {
+    width: 100%;
+  }
+  
+  .center {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .margin-top {
+    margin-top: 16px;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .sign-up-link {
+    font-size: 1rem;
+    margin-left: 8px;
+  }

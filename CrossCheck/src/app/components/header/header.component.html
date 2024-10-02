@@ -1,0 +1,17 @@
+<mat-toolbar class="mat-elevation-z3" *ngIf="router.url !== '/login'">
+    <button mat-icon-button (click)="collapsed.set(!collapsed())">
+      <mat-icon>
+        menu
+      </mat-icon>
+    </button>
+    <button mat-icon-button class="notify-icon">
+      <mat-icon >
+        notifications_none
+      </mat-icon>
+    </button>
+    <button mat-icon-button class="account-icon">
+      <mat-icon >
+        account_circle
+      </mat-icon>
+    </button>
+  </mat-toolbar>
