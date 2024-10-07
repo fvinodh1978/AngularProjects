@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { AnalyticsComponent } from './pages/analytics/analytics.component';
 import { LoginComponent } from './account/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ManagetestsComponent } from './pages/managetests/managetests.component';
 import { SignupComponent } from './account/signup/signup.component';
+import { AnalyticsComponent } from './pages/dashboard/widgets/analytics/analytics.component';
 
 const routes: Routes = [
   { 

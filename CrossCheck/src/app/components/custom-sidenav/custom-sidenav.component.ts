@@ -42,8 +42,8 @@ export class CustomSidenavComponent {
       route: 'executetests'
     },
     {
-      icon: 'analytics',
-      label: 'Analytics',
+      icon: 'schedule',
+      label: 'Schedule Tests',
       route: 'analytics'
     },
     {

@@ -1,0 +1,17 @@
+.dashboard-widgets {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-left: 10px;
+    margin-right: 10px;
+    /* grid-template-columns: repeat(auto-fit,minmax(200px, 1fr)); */
+    gap: 16px;
+    font-size:xx-small;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 10px;
+   
+}

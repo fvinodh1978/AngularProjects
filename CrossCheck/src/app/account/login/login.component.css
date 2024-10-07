@@ -19,6 +19,22 @@
   border-width: 10px;
 }
 
+matInput {
+  color: #ff4081; /* Custom text color */
+}
+
+::ng-deep .mat-input-element::placeholder {
+  color: #ff4081; /* Custom placeholder color */
+}
+
+.mat-form-field-underline {
+  background-color: #ff4081; /* Custom underline color */
+}
+
+.mat-form-field-label {
+  color: #ff4081; /* Custom label color */
+}
+
 .form-container mat-form-field {
   width: 100%;
 }

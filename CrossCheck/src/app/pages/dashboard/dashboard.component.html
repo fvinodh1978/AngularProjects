@@ -1,1 +1,18 @@
-<h1>Dashboard</h1>
+<div class="header">
+    <h6 style="padding:30px 0px 0px 30px;">Dashboard</h6>
+    <button mat-raised-button>
+        <mat-icon>add_circle</mat-icon>
+        Add widgets
+    </button>
+</div>
+<!-- <div class="dashboard-widgets">
+    @for(w of widgets; track w.id){
+    <app-widget [data]="w"></app-widget>
+    }
+</div> -->
+
+<div class="dashboard-widgets">
+    @for(w of store.widgets(); track w.id){
+    <app-widget [data]="w"></app-widget>
+    }
+</div>

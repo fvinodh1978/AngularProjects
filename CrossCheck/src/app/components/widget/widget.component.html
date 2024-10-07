@@ -1,0 +1,4 @@
+<div class="container mat-elevation-z3" [style.background-color]="data().backgroundColor ?? 'white'" [style.color]="data().color ?? 'inherit'">
+    <h6 class="m-0" style="font-size:1rem;">{{data().label}}</h6>
+    <ng-container [ngComponentOutlet]="data().content"></ng-container>
+</div>
