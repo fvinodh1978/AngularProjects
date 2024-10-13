@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, signal } from '@angular/core';
 import { Widget } from '../../model/dashboard';
 import { NgComponentOutlet } from '@angular/common';
 
@@ -9,4 +9,6 @@ import { NgComponentOutlet } from '@angular/common';
 })
 export class WidgetComponent {
   data = input.required<Widget>();
+
+  showOptions=signal(false)
 }

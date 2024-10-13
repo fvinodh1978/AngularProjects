@@ -6,12 +6,19 @@ import { HomeComponent } from './pages/home/home.component';
 import { ManagetestsComponent } from './pages/managetests/managetests.component';
 import { SignupComponent } from './account/signup/signup.component';
 import { AnalyticsComponent } from './pages/dashboard/widgets/analytics/analytics.component';
+import { ExecutetestsComponent } from './pages/executetests/executetests.component';
+import { BuildtestsComponent } from './pages/buildtests/buildtests.component';
 
 const routes: Routes = [
   { 
     path: '',
     pathMatch: 'full',
     redirectTo: 'login'
+  },
+  
+  {
+    path: 'buildtest',
+    component: BuildtestsComponent
   },
   {
     path: 'login',
@@ -30,8 +37,8 @@ const routes: Routes = [
     component: DashboardComponent
   },
   {
-    path: 'users',
-    component: AnalyticsComponent
+    path: 'executetests',
+    component: ExecutetestsComponent
   },
   {
     path: 'analytics',

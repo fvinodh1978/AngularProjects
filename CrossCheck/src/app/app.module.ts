@@ -34,6 +34,21 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { SubscribersComponent } from './pages/dashboard/widgets/subscribers/subscribers.component';
 import { AnalyticsComponent } from './pages/dashboard/widgets/analytics/analytics.component';
 import { TeststatusComponent } from './pages/dashboard/widgets/teststatus/teststatus.component';
+import { MatMenuModule } from '@angular/material/menu';
+import { WidgetOptionsComponent } from './components/widget/widget-options/widget-options.component';
+import { ExecutetestsComponent } from './pages/executetests/executetests.component';
+import { MatSelectModule } from '@angular/material/select';
+import { BuildtestsComponent } from './pages/buildtests/buildtests.component'
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatCardModule } from '@angular/material/card';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatTableExporterModule } from 'mat-table-exporter';
+import { FormsModule } from '@angular/forms'
+import { SelectionModel } from '@angular/cdk/collections'
 
 @NgModule({
   declarations: [
@@ -55,7 +70,10 @@ import { TeststatusComponent } from './pages/dashboard/widgets/teststatus/testst
     SubscribersComponent,
     AnalyticsComponent,
     TeststatusComponent,
-    WidgetComponent
+    WidgetComponent,
+    WidgetOptionsComponent,
+    ExecutetestsComponent,
+    BuildtestsComponent
   ],
   imports: [
     AppRoutingModule,
@@ -73,7 +91,18 @@ import { TeststatusComponent } from './pages/dashboard/widgets/teststatus/testst
     HttpClientModule,
     NgComponentOutlet,
     MatDialogModule,
-    MatIcon
+    MatIcon,
+    MatMenuModule,
+    MatSelectModule,
+    MatSlideToggleModule,
+    MatCardModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatTableModule,
+    MatCheckboxModule,
+    MatProgressSpinnerModule,
+    MatTableExporterModule,
+    FormsModule
   ],
   exports: [WidgetComponent], // Export the component here
   providers: [

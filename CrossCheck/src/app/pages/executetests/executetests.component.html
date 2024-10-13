@@ -1,0 +1,21 @@
+<form>
+    <mat-form-field appearance="fill">
+      <mat-label>Dropdown</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let option of options" [value]="option.value">
+          {{ option.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <mat-form-field appearance="fill">
+      <mat-label>Text Input</mat-label>
+      <input matInput placeholder="Enter text">
+    </mat-form-field>
+  
+    <div>
+      <button mat-button type="button">Cancel</button>
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+    </div>
+  </form>
+  
