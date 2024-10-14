@@ -49,6 +49,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTableExporterModule } from 'mat-table-exporter';
 import { FormsModule } from '@angular/forms'
 import { SelectionModel } from '@angular/cdk/collections'
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { TestprofileComponent } from './pages/testprofile/testprofile.component'
 
 @NgModule({
   declarations: [
@@ -73,7 +75,8 @@ import { SelectionModel } from '@angular/cdk/collections'
     WidgetComponent,
     WidgetOptionsComponent,
     ExecutetestsComponent,
-    BuildtestsComponent
+    BuildtestsComponent,
+    TestprofileComponent
   ],
   imports: [
     AppRoutingModule,
@@ -102,7 +105,8 @@ import { SelectionModel } from '@angular/cdk/collections'
     MatCheckboxModule,
     MatProgressSpinnerModule,
     MatTableExporterModule,
-    FormsModule
+    FormsModule,
+    MatTooltipModule
   ],
   exports: [WidgetComponent], // Export the component here
   providers: [

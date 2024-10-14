@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AlertBoxComponent } from './alert-box.component';
+import { TestprofileComponent } from './testprofile.component';
 
-describe('AlertBoxComponent', () => {
-  let component: AlertBoxComponent;
-  let fixture: ComponentFixture<AlertBoxComponent>;
+describe('TestprofileComponent', () => {
+  let component: TestprofileComponent;
+  let fixture: ComponentFixture<TestprofileComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AlertBoxComponent]
+      declarations: [TestprofileComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AlertBoxComponent);
+    fixture = TestBed.createComponent(TestprofileComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
