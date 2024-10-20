@@ -1,30 +1,42 @@
 <div class="login-form-container">
     <h2 style="color:#ffffff; font: bold; text-align: center; font-size:x-large; padding : 10px">MM | Cross Check</h2>
+
     <div class="form-container">
-        <h2 style="font-size:x-large;">Login to Account</h2>
-        <form action="" [formGroup]="loginForm" (ngSubmit)="submit()">
-            <mat-form-field>
-                <input matInput placeholder="User Name" formControlName="username">
-                <mat-error *ngIf="username?.errors?.['required']">
-                    User Name is Required
-                </mat-error>
-                <!-- <mat-error *ngIF="email?.errors?.['email']">
-                    Please enter a corrent email format
-                </mat-error> -->
-            </mat-form-field>
-            <mat-form-field>
-                <input matInput placeholder="Password" formControlName="password" type="password">
-                <mat-error *ngIf="password?.errors?.['required']">
-                    Password is Required
-                </mat-error>
-            </mat-form-field>
-            <div class="center margin-top">
-                <button mat-raised-button color="primary" type="submit" >Login</button>
+        <h2 style="font-size:x-large; text-align: center">Login to Account</h2>
+        <form [formGroup]="loginForm" (ngSubmit)="submit()">
+            <div class="form-row">
+                <mat-form-field floatLabel="auto" class="custom-field" >
+                    <mat-label>User Name</mat-label>
+                    <input matInput formControlName="username" required="" >
+                    <mat-icon matSuffix>person</mat-icon>
+                    @if (loginForm.get('username')?.hasError('required')){
+                    <mat-error *ngIf="username?.errors?.['required']">
+                        User Name is Required
+                    </mat-error>
+                    }
+                </mat-form-field>
+                <mat-form-field floatLabel="auto">
+                    <mat-label>Password</mat-label>
+                    <!-- <mat-icon matSuffix (click)="pwdHide = !pwdHide; pwdType='text'">{{pwdHide ? 'visibility_off'
+                        :'visibility'}}</mat-icon> -->
+                    <input matInput formControlName="password" [type]="pwdType" style="font-size:smaller;">
+                    <mat-error *ngIf="password?.errors?.['required']">
+                        Password is Required
+                    </mat-error>
+                </mat-form-field>
+
+            </div>
+
+            <div class="center">
+                <button mat-raised-button color="primary" type="submit">Login</button>
                 <!-- routerLink="/home" -->
             </div>
-            <span class="center margin-top">New to our Platform?<a class="sign-up-link" routerLink="/signup"> Register Here!</a></span>
+            <span class="center margin-top" style="font-size:smaller;">New to our Platform?<a class="sign-up-link"
+                    routerLink="/signup" style="font-size:small;"> Register
+                    Here!</a></span>
         </form>
     </div>
+
     <mat-divider class="thick-divider"></mat-divider>
     <div class="social-icons">
         <button mat-icon-button class="facebook">

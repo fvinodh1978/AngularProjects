@@ -34,7 +34,7 @@ export class CustomSidenavComponent {
     {
       icon: 'science',
       label: 'Build Tests',
-      route: 'tests'
+      route: 'buildtest'
     },
     {
       icon: 'play_arrow',
@@ -42,8 +42,8 @@ export class CustomSidenavComponent {
       route: 'executetests'
     },
     {
-      icon: 'analytics',
-      label: 'Analytics',
+      icon: 'schedule',
+      label: 'Schedule Tests',
       route: 'analytics'
     },
     {

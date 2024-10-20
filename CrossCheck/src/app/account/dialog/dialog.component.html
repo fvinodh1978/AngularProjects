@@ -1,0 +1,40 @@
+<!-- account.component.html -->
+<!-- <h2 mat-dialog-title>Account Details</h2> -->
+<mat-dialog-content class="mat-dialog-container">
+    <div style="display:flex; justify-content: space-between;">
+        <div>
+            <a style="font-size: large;">Account details</a>
+        </div>
+        <div>
+            <a style="font-size: large;">Logout</a>
+        </div>
+    </div>
+
+    <!-- <mat-nav-list>
+        <a mat-list-item class="menu-item" *ngFor="let item of menuitems()" [routerLink]="item.route" routerLinkActive="selected-menu-item"
+            #rla="routerLinkActive" [activated] = "rla.isActive">
+            <mat-icon [fontSet]="rla.isActive ? 'material-icons' : 'material-icons-outlined'" matListItemIcon >{{item.icon}}</mat-icon>
+            <span matListItemTitle *ngIf="!sideNavCollapsed()">{{item.label}}</span>
+        </a>
+    </mat-nav-list> -->
+
+    <mat-nav-list>
+        <a mat-list-item class="menu-item" style="display: inline-flex; justify-content: space-between;">
+            <span matListItemTitle>My Profile</span>
+            <mat-icon matListItemIcon>chevron_right</mat-icon>
+        </a>
+        <a mat-list-item class="menu-item" style="display: inline-flex; justify-content: space-between;">
+            <span matListItemTitle>Change Password</span>
+            <mat-icon matListItemIcon>exit_to_app</mat-icon>
+        </a>
+        <a mat-list-item class="menu-item" style="display: inline-flex; justify-content: space-between;">
+            <span matListItemTitle>Logout</span>
+            <mat-icon matListItemIcon>exit_to_app</mat-icon>
+        </a>
+    </mat-nav-list>
+
+    <!-- Add your form or account details here -->
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button mat-dialog-close>Close</button>
+</mat-dialog-actions>

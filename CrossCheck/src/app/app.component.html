@@ -1,5 +1,5 @@
 <div>
-  <div *ngIf="router.url !== '/login' && router.url !== '/signup'">
+  <div *ngIf="router.url !== '/' && router.url !== '/login' && router.url !== '/signup'">
     <mat-toolbar class="mat-elevation-z3">
       <button mat-icon-button (click)="collapsed.set(!collapsed())">
         <mat-icon>
@@ -11,7 +11,7 @@
           notifications_none
         </mat-icon>
       </button>
-      <button mat-icon-button class="account-icon">
+      <button mat-icon-button class="account-icon"   #openButton  (click)="openAccountDialog()" >
         <mat-icon>
           account_circle
         </mat-icon>

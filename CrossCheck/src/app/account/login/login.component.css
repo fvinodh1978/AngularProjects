@@ -1,22 +1,60 @@
+
 .login-form-container {
   background-color: #1f5088;
-  /* background-color: white; */
-  padding: 40px 0px 70px 0px;
-  /* height: calc(100vh - 200px); */
+  /* padding: 40px 0px 70px 0px; */
+  padding: 30px 0px 80px 0px;
+
   height: calc(100vh - 110px);
   align-items: center;
   justify-content: center;
+
+  /* height: calc(100vh - 200px); */
+  /* background-color: white; */
 }
 
 .form-container {
   display: block;
-  max-width: 350px;
+  /* max-width: 300px; */
+  width: 300px;
+  /* width: 500px; */
   margin: auto;
   background: white;
   padding: 40px;
   border-radius: 10px;
   border-color: #ee0c40;
   border-width: 10px;
+}
+
+/* form {
+  max-width: 600px;
+  padding: 40px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  border-color: #ee0c40;
+  gap: 20px;
+} */
+
+matInput {
+  color: #ff4081;
+  background-color: transparent;
+}
+
+::ng-deep .mat-input-element::placeholder {
+  color: #ff4081;
+  /* Custom placeholder color */
+}
+
+.mat-form-field-underline {
+  background-color: #ff4081;
+  /* Custom underline color */
+}
+
+.mat-form-field-label {
+  color: #ff4081;
+  /* Custom label color */
 }
 
 .form-container mat-form-field {
@@ -45,7 +83,7 @@
 .thick-divider {
   height: 1px;
   /* margin:auto; */
-  margin: 75px 0px 0px 180px;
+  margin: 65px 0px 20px 180px;
   width: 70%;
   /* Adjust the thickness as needed */
   background-color: white;
@@ -55,44 +93,79 @@
 
 ::ng-deep .facebook:hover,
 .facebook:focus,
-.facebook:active
- {
-  background-color: white; /* Change to your desired color */
-  color: black; /* Optional: Change icon color */
+.facebook:active {
+  background-color: white;
+  /* Change to your desired color */
+  color: black;
+  /* Optional: Change icon color */
 }
 
 ::ng-deep .linkedin:hover,
 .facebook:focus,
-.facebook:active
- {
-  background-color: white; /* Change to your desired color */
-  color: black; /* Optional: Change icon color */
+.facebook:active {
+  background-color: white;
+  /* Change to your desired color */
+  color: black;
+  /* Optional: Change icon color */
 }
 
 ::ng-deep .twitter:hover,
 .facebook:focus,
-.facebook:active
- {
-  background-color: white; /* Change to your desired color */
-  color: black; /* Optional: Change icon color */
+.facebook:active {
+  background-color: white;
+  /* Change to your desired color */
+  color: black;
+  /* Optional: Change icon color */
 }
 
 ::ng-deep .dribbble:hover,
 .facebook:focus,
-.facebook:active
- {
-  background-color: white; /* Change to your desired color */
-  color: black; /* Optional: Change icon color */
+.facebook:active {
+  background-color: white;
+  /* Change to your desired color */
+  color: black;
+  /* Optional: Change icon color */
 }
 
-.social-icons{
+.social-icons {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.copyright-text{
-  text-align:center;
-  color:white;
+.copyright-text {
+  text-align: center;
+  color: white;
   font-size: small;
 }
+
+
+/* 
+.form-row {
+  display: flex;
+  gap: 20px;
+  text-align: flex-start;
+} */
+
+mat-form-field {
+  width: 100px;
+  /* margin-bottom: 20px; */
+}
+
+.custom-field input {
+  font-size: smaller;
+  background-color: transparent;
+  line-height: 1.2;
+  /* padding: 4px 8px; */
+}
+
+
+/* form-actions {
+  text-align: right;
+} */
+
+/* @media(max-width:600px) {
+  .form-row {
+    flex-direction: column;
+  }
+} */

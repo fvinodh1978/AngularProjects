@@ -1,6 +1,7 @@
 .login-form-container {
     background-color: #1f5088;
-    padding: 40px 0px 70px 0px;
+    /* padding: 40px 0px 70px 0px; */
+    padding: 30px 0px 80px 0px;
     /* height: calc(100vh - 200px); */
     height: calc(100vh - 110px);
     align-items: center;
@@ -9,7 +10,8 @@
   
   .form-container {
     display: block;
-    max-width: 350px;
+    /* max-width: 350px; */
+    width:300px;
     margin: auto;
     background: white;
     padding: 40px;
@@ -27,10 +29,10 @@
     justify-content: center;
   }
   
-  .margin-top {
+  /* .margin-top {
     margin-top: 16px;
   }
-  
+   */
   .text-center {
     text-align: center;
   }
