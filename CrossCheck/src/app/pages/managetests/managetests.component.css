@@ -1,0 +1,28 @@
+.scrollable-list-box {
+    max-height: calc(48px * 5);
+    /* Set the max height to display 10 rows */
+    overflow-y: auto;
+}
+
+/* .mat-selection-list {
+    max-height: calc(48px * 5);
+    overflow-y: auto;
+} */
+
+.mat-list-option {
+    height: 48px;
+    /* Set the height of each row to 48px */
+    display: flex;
+    align-items: center;
+}
+
+
+.mat-form-field {
+    width: 100%;
+}
+
+.mat-selection-list {
+    max-height: 300px;
+    /* Adjust height as needed */
+    overflow-y:auto
+}

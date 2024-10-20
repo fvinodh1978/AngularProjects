@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { SelectionModel } from '@angular/cdk/collections'
 import { AlertService } from '../../services/alert.service'
-import { TestprofileComponent } from '../testprofile/testprofile.component';
 import { MatDialog } from '@angular/material/dialog';
+import { ManagetestsComponent } from '../managetests/managetests.component';
+import { TestprofileComponent } from '../testprofile/testprofile.component';
 
 export interface PeriodicElement {
   name: string;
@@ -14,11 +15,6 @@ export interface PeriodicElement {
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  // { position: 1, name: 'TC001', weight: 1.0079, symbol: 'Hy' },
-  // { position: 2, name: 'TC002', weight: 4.0026, symbol: 'He' },
-  // { position: 3, name: 'TC001', weight: 1.0079, symbol: 'Hy' },
-  // { position: 4, name: 'TC002', weight: 4.0026, symbol: 'He' },
-
   { position: 1, name: 'TC001', feature: 'US001', weight: 1.0079, symbol: 'Hy' },
   { position: 2, name: 'TC002', feature: 'US001', weight: 4.0026, symbol: 'He' },
   { position: 3, name: 'TC003', feature: 'US001', weight: 1.0079, symbol: 'Hy' },
@@ -31,8 +27,8 @@ const ELEMENT_DATA: PeriodicElement[] = [
   { position: 10, name: 'TC004', feature: 'US002', weight: 4.0026, symbol: 'He' },
   { position: 11, name: 'TC005', feature: 'US002', weight: 1.0079, symbol: 'Hy' },
   { position: 12, name: 'TC006', feature: 'US002', weight: 4.0026, symbol: 'He' },
-  // other elements
 ];
+
 @Component({
   selector: 'app-buildtests',
   templateUrl: './buildtests.component.html',
@@ -44,6 +40,7 @@ export class BuildtestsComponent implements OnInit {
   dataSource = new MatTableDataSource(ELEMENT_DATA);
   selectedValue: string = '';
   selection = new SelectionModel<PeriodicElement>(true, []);
+
 
   constructor(private alertService: AlertService, public dialog: MatDialog) {
     this.dataSource.filterPredicate = (data: PeriodicElement, filter: string) => {
@@ -74,6 +71,18 @@ export class BuildtestsComponent implements OnInit {
       this.dataSource.filter = this.selectedValue.trim().toLowerCase();
       // this.dataSource.filter = this.selectedValue.trim();
     }
+  }
+
+  addRow() {
+    const dialogRef = this.dialog.open(TestprofileComponent);
+    // const dialogRef = this.dialog.open(ManagetestsComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        console.log('Item added:', result);
+        // Logic to add the new item to your data source
+      }
+    });
   }
 
   deleteRow1(element: PeriodicElement) {
@@ -113,21 +122,10 @@ export class BuildtestsComponent implements OnInit {
     // Add your execution logic here
   }
 
-  addRow() {
-    const dialogRef = this.dialog.open(TestprofileComponent);
-
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        console.log('Item added:', result);
-        // Logic to add the new item to your data source
-      }
-    });
-  }
-
   openDialog(): void {
     this.dialog.open(TestprofileComponent);
+    // this.dialog.open(ManagetestsComponent);
   }
 
-
-      ngOnInit() {}
+  ngOnInit() { }
 }

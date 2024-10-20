@@ -38,11 +38,11 @@ const routes: Routes = [
   },
   {
     path: 'executetests',
-    component: ExecutetestsComponent
+    component: AnalyticsComponent
   },
   {
     path: 'analytics',
-    component: AnalyticsComponent
+    component: ExecutetestsComponent
   },
   {
     path: 'tests',

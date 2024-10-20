@@ -1,0 +1,41 @@
+.button-container {
+    display: flex;
+    /* justify-content: flex-end;*/
+    justify-content: space-between;
+    margin-bottom: 10px;
+    /* Adjust as needed */
+}
+
+.mat-header-row {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    /* Ensure it stays on top of the scrolling rows */
+    background-color: white;
+    /* or whatever your header background is */
+}
+
+.table-container {
+    max-height: 400px;
+    /* Set the max height you want for your table */
+    overflow-y: auto;
+    /* Enable vertical scrolling */
+    display: block;
+    /* Ensure it takes block space */
+}
+
+
+.dropdown-row {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  mat-form-field {
+    flex: 1;
+    margin-right: 10px; /* Adjust spacing as needed */
+  }
+  
+  mat-form-field:last-child {
+    margin-right: 0; /* Remove margin for the last dropdown */
+  }
+  

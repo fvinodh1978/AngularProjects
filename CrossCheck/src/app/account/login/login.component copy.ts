@@ -12,25 +12,20 @@ import { HotToastService } from '@ngneat/hot-toast';
 
 export class LoginComponent implements OnInit {
 
-  // loginForm: FormGroup;
+  loginForm: FormGroup;
 
-  loginForm = new FormGroup({
-    username: new FormControl('', Validators.required),
-    password: new FormControl('', Validators.required),
-  })
 
-  constructor(private toast: HotToastService){}
-  // constructor(private toast: HotToastService, private fb: FormBuilder) {
-  //   this.loginForm = this.fb.group({
-  //     firstname: new FormControl('', Validators.required),
-  //     lastname: new FormControl('', Validators.required),
-  //     email: new FormControl('', [Validators.required, Validators.email]),
-  //     phone: new FormControl('', Validators.required),
-  //     dateOfBirth:new FormControl(''),
-  //     address: new FormControl(),
-  //     country: new FormControl('India')
-  //   })
-  // }
+
+  // loginForm = new FormGroup({
+  //   username: new FormControl('', Validators.required),
+  //   password: new FormControl('', Validators.required),
+  //   email: new FormControl('', [Validators.required, Validators.email]),
+  //   picker: new FormControl()
+  // })
+
+  constructor(private toast: HotToastService, private fb: FormBuilder) { 
+
+  }
 
   router: Router = inject(Router);
   authService: AuthService = inject(AuthService);
@@ -48,17 +43,16 @@ export class LoginComponent implements OnInit {
     return this.loginForm.get('password');
   }
 
-  // get email() {
-  //   return this.loginForm.get('email');
-  // }
+  get email() {
+    return this.loginForm.get('email');
+  }
 
   submit() {
     if (!this.loginForm.valid) {
       return;
     }
 
-    // const { username, password, email } = this.loginForm.value;
-    const { username, password } = this.loginForm.value;
+    const { username, password, email } = this.loginForm.value;
     console.log(username);
     console.log(password);
 

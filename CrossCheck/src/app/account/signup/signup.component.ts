@@ -35,6 +35,8 @@ export class SignupComponent {
   router: Router = inject(Router);
   authService: AuthService = inject(AuthService);
   isLoginMode: boolean = true;
+  pwdHide = true;
+  pwdType = "password";
 
   ngOnInit(): void { }
 

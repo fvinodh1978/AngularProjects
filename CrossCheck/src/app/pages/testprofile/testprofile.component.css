@@ -1,0 +1,27 @@
+.dropdown-input-combo {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-input-combo mat-select {
+  flex: 1;
+  margin-right: 8px;
+}
+
+.dropdown-input-combo input {
+  flex: 2;
+} 
+
+
+mat-form-field {
+  width: 100%;
+}
+
+mat-form-field input {
+  align-items: center;
+  display: flex;
+  width: 100%;
+  padding: 4px 8px;
+  line-height: 1.2;
+  font-size: 14px;
+}

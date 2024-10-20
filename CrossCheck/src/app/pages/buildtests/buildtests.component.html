@@ -4,15 +4,14 @@
     </h6>
     <div class="button-container">
         <div>
-            <mat-form-field appearance="fill" color="primary">
+            <mat-form-field color="primary">
                 <mat-label>Select a Story</mat-label>
-                <mat-select [(ngModel)]="selectedValue" (selectionChange)="filterTable()" color="primary"
-                    placeholder="All">
+                <mat-select [(ngModel)]="selectedValue" (selectionChange)="filterTable()" placeholder="All">
                     <mat-option *ngFor="let option of options" [value]="option.value">
                         {{ option.viewValue }}
                     </mat-option>
                 </mat-select>
-            </mat-form-field>
+            </mat-form-field>              
         </div>
         <div>
             <button mat-icon-button color="primary" (click)="addRow()">

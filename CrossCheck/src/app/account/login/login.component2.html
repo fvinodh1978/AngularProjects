@@ -3,11 +3,12 @@
 
     <div class="form-container">
         <h2 style="font-size:x-large; text-align: center">Login to Account</h2>
+
         <form [formGroup]="loginForm" (ngSubmit)="submit()">
             <div class="form-row">
-                <mat-form-field floatLabel="auto" class="custom-field" >
-                    <mat-label>User Name</mat-label>
-                    <input matInput formControlName="username" required="" >
+                <mat-form-field floatLabel="auto">
+                    <mat-label>First Name</mat-label>
+                    <input matInput formControlName="username" required="">
                     <mat-icon matSuffix>person</mat-icon>
                     @if (loginForm.get('username')?.hasError('required')){
                     <mat-error *ngIf="username?.errors?.['required']">
@@ -16,16 +17,42 @@
                     }
                 </mat-form-field>
                 <mat-form-field floatLabel="auto">
-                    <mat-label>Password</mat-label>
-                    <!-- <mat-icon matSuffix (click)="pwdHide = !pwdHide; pwdType='text'">{{pwdHide ? 'visibility_off'
-                        :'visibility'}}</mat-icon> -->
-                    <input matInput formControlName="password" [type]="pwdType" style="font-size:smaller;">
-                    <mat-error *ngIf="password?.errors?.['required']">
-                        Password is Required
+                    <mat-label>Last Name</mat-label>
+                    <mat-icon matSuffix>email</mat-icon>
+                    <input matInput formControlName="email" required>
+                    <mat-error *ngIf="email?.errors?.['required']">
+                        Email is Required
                     </mat-error>
                 </mat-form-field>
-
             </div>
+
+            <div class="form-row">
+                <mat-form-field>
+                    <mat-label>Phone Number</mat-label>
+                    <input matInput formControlName="phone" type="text">
+                    <mat-icon matSuffix>phone</mat-icon>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Date of Birth</mat-label>
+                    <input matInput formControlName="dateOfBirth" [matDatepicker]="picker">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <mat-form-field>
+                <mat-label>Address</mat-label>
+                <textarea matInput formControlName="address" rows="5"></textarea>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Country</mat-label>
+                <mat-select formControlName="country">
+                    <mat-option value="pakistan">Pakistan</mat-option>
+                    <mat-option value="india">India</mat-option>
+                    <mat-option value="usa">United States</mat-option>
+                </mat-select>
+            </mat-form-field>
 
             <div class="center">
                 <button mat-raised-button color="primary" type="submit">Login</button>

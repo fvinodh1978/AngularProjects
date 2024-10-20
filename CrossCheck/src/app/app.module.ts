@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, provideZoneChangeDetection } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,11 +13,11 @@ import { MatListModule } from '@angular/material/list';
 import { LoginComponent } from './account/login/login.component';
 import { LogoutComponent } from './account/logout/logout.component';
 import { SignupComponent } from './account/signup/signup.component';
-import { RouterModule } from '@angular/router';
+import { provideRouter, RouterModule } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { ManagetestsComponent } from './pages/managetests/managetests.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/header/header.component';
@@ -50,7 +50,11 @@ import { MatTableExporterModule } from 'mat-table-exporter';
 import { FormsModule } from '@angular/forms'
 import { SelectionModel } from '@angular/cdk/collections'
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { TestprofileComponent } from './pages/testprofile/testprofile.component'
+import { MatDatepickerModule } from '@angular/material/datepicker'
+import { MatNativeDateModule } from '@angular/material/core';
+import { TestprofileComponent } from './pages/testprofile/testprofile.component';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatRadioModule } from '@angular/material/radio'
 
 @NgModule({
   declarations: [
@@ -106,11 +110,21 @@ import { TestprofileComponent } from './pages/testprofile/testprofile.component'
     MatProgressSpinnerModule,
     MatTableExporterModule,
     FormsModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatAutocompleteModule,
+    MatRadioModule
   ],
   exports: [WidgetComponent], // Export the component here
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    provideZoneChangeDetection({ eventCoalescing: true }),
+    {
+      provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
+      useValue: { appearance: 'outline', subscriptSizing: 'static' }
+    }
+
   ],
   bootstrap: [AppComponent]
 })
