@@ -4,30 +4,21 @@ import { SelectionModel } from '@angular/cdk/collections'
 import { AlertService } from '../../services/alert.service'
 import { MatDialog } from '@angular/material/dialog';
 import { ManagetestsComponent } from '../managetests/managetests.component';
-import { TestprofileComponent } from '../testprofile/testprofile.component';
+import { DataService } from '../../services/data.service';
+import { TestprofileComponent } from '../../dialogs/testprofile/testprofile.component';
+import { TestdetailsComponent } from '../../dialogs/testdetails/testdetails.component';
 
 export interface PeriodicElement {
-  name: string;
-  feature: string;
-  position: number;
-  weight: number;
-  symbol: string;
+  id: number;
+  testCaseName: string;
+  description: string;
+  type: string;
+  testSteps: string;
+  scriptName: string;
+  testProfile: string;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  { position: 1, name: 'TC001', feature: 'US001', weight: 1.0079, symbol: 'Hy' },
-  { position: 2, name: 'TC002', feature: 'US001', weight: 4.0026, symbol: 'He' },
-  { position: 3, name: 'TC003', feature: 'US001', weight: 1.0079, symbol: 'Hy' },
-  { position: 4, name: 'TC004', feature: 'US001', weight: 4.0026, symbol: 'He' },
-  { position: 5, name: 'TC005', feature: 'US001', weight: 1.0079, symbol: 'Hy' },
-  { position: 6, name: 'TC006', feature: 'US001', weight: 4.0026, symbol: 'He' },
-  { position: 7, name: 'TC001', feature: 'US002', weight: 1.0079, symbol: 'Hy' },
-  { position: 8, name: 'TC002', feature: 'US002', weight: 4.0026, symbol: 'He' },
-  { position: 9, name: 'TC003', feature: 'US002', weight: 1.0079, symbol: 'Hy' },
-  { position: 10, name: 'TC004', feature: 'US002', weight: 4.0026, symbol: 'He' },
-  { position: 11, name: 'TC005', feature: 'US002', weight: 1.0079, symbol: 'Hy' },
-  { position: 12, name: 'TC006', feature: 'US002', weight: 4.0026, symbol: 'He' },
-];
+let testcaseList: PeriodicElement[] = [];
 
 @Component({
   selector: 'app-buildtests',
@@ -36,27 +27,24 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 
 export class BuildtestsComponent implements OnInit {
-  displayedColumns: string[] = ['select', 'position', 'name', 'feature', 'weight', 'symbol', 'execute', 'delete'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+
+  // Declare Variables
+  displayedColumns: string[] = ['select', 'id', 'testCaseName', 'description', 'type', 'testProfile', 'delete', 'details'];
   selectedValue: string = '';
   selection = new SelectionModel<PeriodicElement>(true, []);
+  dataSource = new MatTableDataSource(testcaseList);
+  options: string[] = [];
 
-
-  constructor(private alertService: AlertService, public dialog: MatDialog) {
+  constructor(private alertService: AlertService,
+    public dialog: MatDialog,
+    private dataService: DataService
+  ) {
     this.dataSource.filterPredicate = (data: PeriodicElement, filter: string) => {
-      return data.feature.toLowerCase().includes(filter) || data.feature.toLowerCase().includes(filter);
+      console.log(data);
+      // return data.feature.toLowerCase().includes(filter) || data.feature.toLowerCase().includes(filter);
+      return data.testCaseName.toLowerCase().includes(filter) || data.testCaseName.toLowerCase().includes(filter);
     };
   }
-
-  options = [
-    { value: 'all', viewValue: 'All' },
-    { value: 'us001', viewValue: 'US001' },
-    { value: 'us002', viewValue: 'US002' }
-    // { value: 'all', viewValue: 'All' },
-    // { value: 'Hy', viewValue: 'Hydrogen' },
-    // { value: 'He', viewValue: 'Helium' }
-    // add more options
-  ];
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -65,7 +53,7 @@ export class BuildtestsComponent implements OnInit {
 
   filterTable() {
     console.log(this.selectedValue.trim());
-    if (this.selectedValue === 'all') {
+    if (this.selectedValue === 'All') {
       this.dataSource.filter = '';
     } else {
       this.dataSource.filter = this.selectedValue.trim().toLowerCase();
@@ -127,5 +115,30 @@ export class BuildtestsComponent implements OnInit {
     // this.dialog.open(ManagetestsComponent);
   }
 
-  ngOnInit() { }
+  displayTest(record: any) {
+    console.log(record);
+
+    let tableData = Object.entries(record).map(([key, value]) => ({ key, value }));
+    this.dialog.open(TestdetailsComponent, {
+      width: '600px',
+      // data: { dataSource: this.dataSource1 }
+      data: { dataSource: tableData }
+    });
+  }
+
+  ngOnInit(): void {
+
+    // testcaseList = [
+    //   { id: 1, testCaseName: 'TC006', description: 'US002', type: 'Regression', testSteps: 'He', scriptName: 'Script1', testProfile: 'He' },
+    //   { id: 2, testCaseName: 'TC007', description: 'US003', type: 'Sanity', testSteps: 'He', scriptName: 'Script1', testProfile: 'He' },
+    // ];
+
+    this.dataService.getData().subscribe(data => {
+      testcaseList = data;
+      this.options = testcaseList.map(record => record.testCaseName);
+      this.options =["All", ...this.options];
+      console.log(testcaseList);
+      console.log(this.options);
+    });
+  }
 }

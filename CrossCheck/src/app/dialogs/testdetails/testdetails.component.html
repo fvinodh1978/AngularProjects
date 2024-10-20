@@ -1,0 +1,27 @@
+<div style="align-items: center; border-radius: 4px">
+    <h1 mat-dialog-title style="font-size:medium; padding-bottom: 0px; margin-bottom: 0px; text-align: center;">Testcase Details</h1>
+
+    <div mat-dialog-content>
+     <table mat-table [dataSource]="dataSource">
+        <!-- class="mat-elevation-z8">  -->
+
+            <!-- Column 1 -->
+            <ng-container matColumnDef="key">
+                <th mat-header-cell *matHeaderCellDef class="sticky-header"> Attributes </th>
+                <td mat-cell *matCellDef="let element"> {{element.key}} </td>
+            </ng-container>
+
+            <!-- Column 2 -->
+            <ng-container matColumnDef="value">
+                <th mat-header-cell *matHeaderCellDef class="sticky-header"> Values </th>
+                <td mat-cell *matCellDef="let element"> {{element.value}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button (click)="onClose()">Close</button>
+    </div>
+</div>

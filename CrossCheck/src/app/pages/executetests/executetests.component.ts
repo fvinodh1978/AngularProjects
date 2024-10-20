@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { TestprofileComponent } from '../testprofile/testprofile.component';
 import { MatTableDataSource } from '@angular/material/table';
 import { SelectionModel } from '@angular/cdk/collections';
 import { AlertService } from '../../services/alert.service'
 import { MatDialog } from '@angular/material/dialog';
+import { TestprofileComponent } from '../../dialogs/testprofile/testprofile.component';
 
 export interface PeriodicElement {
   name: string;

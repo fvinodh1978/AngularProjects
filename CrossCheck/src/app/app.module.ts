@@ -52,9 +52,10 @@ import { SelectionModel } from '@angular/cdk/collections'
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDatepickerModule } from '@angular/material/datepicker'
 import { MatNativeDateModule } from '@angular/material/core';
-import { TestprofileComponent } from './pages/testprofile/testprofile.component';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
-import { MatRadioModule } from '@angular/material/radio'
+import { MatRadioModule } from '@angular/material/radio';
+import { TestdetailsComponent } from './dialogs/testdetails/testdetails.component'
+import { TestprofileComponent } from './dialogs/testprofile/testprofile.component';
 
 @NgModule({
   declarations: [
@@ -80,7 +81,8 @@ import { MatRadioModule } from '@angular/material/radio'
     WidgetOptionsComponent,
     ExecutetestsComponent,
     BuildtestsComponent,
-    TestprofileComponent
+    TestprofileComponent,
+    TestdetailsComponent
   ],
   imports: [
     AppRoutingModule,

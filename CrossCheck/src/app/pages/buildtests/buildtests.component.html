@@ -7,11 +7,12 @@
             <mat-form-field color="primary">
                 <mat-label>Select a Story</mat-label>
                 <mat-select [(ngModel)]="selectedValue" (selectionChange)="filterTable()" placeholder="All">
-                    <mat-option *ngFor="let option of options" [value]="option.value">
-                        {{ option.viewValue }}
+                    <mat-option *ngFor="let option of options" [value]="option">
+                        <!-- {{ option.viewValue }} -->
+                        {{ option }}
                     </mat-option>
                 </mat-select>
-            </mat-form-field>              
+            </mat-form-field>
         </div>
         <div>
             <button mat-icon-button color="primary" (click)="addRow()">
@@ -38,7 +39,7 @@
 
             <!-- Checkbox Column -->
             <ng-container matColumnDef="select">
-                <th mat-header-cell *matHeaderCellDef>
+                <th mat-header-cell *matHeaderCellDef class="sticky-header">
                     <mat-checkbox (change)="$event ? masterToggle() : null" [checked]="isAllSelected()"
                         [indeterminate]="selection.hasValue() && !isAllSelected()">
                     </mat-checkbox>
@@ -51,38 +52,50 @@
             </ng-container>
 
             <!-- Position Column -->
-            <ng-container matColumnDef="position">
-                <th mat-header-cell *matHeaderCellDef> No. </th>
-                <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef class="sticky-header"> No. </th>
+                <td mat-cell *matCellDef="let element"> {{element.id}} </td>
             </ng-container>
 
             <!-- Name Column -->
-            <ng-container matColumnDef="name">
-                <th mat-header-cell *matHeaderCellDef> Name </th>
-                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            <ng-container matColumnDef="testCaseName">
+                <th mat-header-cell *matHeaderCellDef class="sticky-header"> Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.testCaseName}} </td>
             </ng-container>
 
             <!-- Name Column -->
-            <ng-container matColumnDef="feature">
-                <th mat-header-cell *matHeaderCellDef> Feature </th>
-                <td mat-cell *matCellDef="let element"> {{element.feature}} </td>
+            <ng-container matColumnDef="description">
+                <th mat-header-cell *matHeaderCellDef class="sticky-header"> description </th>
+                <td mat-cell *matCellDef="let element"> {{element.description}} </td>
             </ng-container>
 
             <!-- Weight Column -->
-            <ng-container matColumnDef="weight">
-                <th mat-header-cell *matHeaderCellDef> Weight </th>
-                <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+            <ng-container matColumnDef="type">
+                <th mat-header-cell *matHeaderCellDef class="sticky-header"> Type </th>
+                <td mat-cell *matCellDef="let element"> {{element.type}} </td>
             </ng-container>
 
             <!-- Symbol Column -->
-            <ng-container matColumnDef="symbol">
-                <th mat-header-cell *matHeaderCellDef> Symbol </th>
-                <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+            <ng-container matColumnDef="testSteps">
+                <th mat-header-cell *matHeaderCellDef class="sticky-header"> Test Steps </th>
+                <td mat-cell *matCellDef="let element"> {{element.testSteps}} </td>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="scriptName">
+                <th mat-header-cell *matHeaderCellDef class="sticky-header"> Script Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.scriptName}} </td>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="testProfile">
+                <th mat-header-cell *matHeaderCellDef class="sticky-header" > Test Profile</th>
+                <td mat-cell *matCellDef="let element"> {{element.testProfile}} </td>
             </ng-container>
 
             <!-- Execute Button Column -->
             <ng-container matColumnDef="execute">
-                <th mat-header-cell *matHeaderCellDef>Execute</th>
+                <th mat-header-cell *matHeaderCellDef class="sticky-header">Execute</th>
                 <td mat-cell *matCellDef="let element">
                     <button mat-icon-button color="blue" (click)="executeRow(element)">
                         <mat-icon>play_arrow</mat-icon>
@@ -93,10 +106,22 @@
 
             <!-- Delete Button Column -->
             <ng-container matColumnDef="delete">
-                <th mat-header-cell *matHeaderCellDef>Delete</th>
+                <th mat-header-cell *matHeaderCellDef class="sticky-header">Delete</th>
                 <td mat-cell *matCellDef="let element">
-                    <button mat-icon-button color="blue" (click)="deleteRow(element)">
-                        <mat-icon>delete</mat-icon>
+                    <button mat-icon-button (click)="deleteRow(element)">
+                        <mat-icon color="primary">delete</mat-icon>
+                    </button>
+                </td>
+            </ng-container>
+
+            <!-- Delete Button Column -->
+            <ng-container matColumnDef="details">
+                <th mat-header-cell *matHeaderCellDef class="sticky-header">Details</th>
+                <td mat-cell *matCellDef="let element">
+                    <button mat-icon-button (click)="displayTest(element)">
+                        <!-- <mat-icon color="primary">greater_than</mat-icon> -->
+                        <mat-icon color="primary">keyboard_arrow_right</mat-icon>
+
                     </button>
                 </td>
             </ng-container>
