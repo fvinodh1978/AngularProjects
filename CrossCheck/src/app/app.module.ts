@@ -56,6 +56,8 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatRadioModule } from '@angular/material/radio';
 import { TestdetailsComponent } from './dialogs/testdetails/testdetails.component'
 import { TestprofileComponent } from './dialogs/testprofile/testprofile.component';
+import { TestlabComponent } from './dialogs/testlab/testlab.component';
+import { ExecutionstudioComponent } from './dialogs/executionstudio/executionstudio.component';
 
 @NgModule({
   declarations: [
@@ -82,7 +84,9 @@ import { TestprofileComponent } from './dialogs/testprofile/testprofile.componen
     ExecutetestsComponent,
     BuildtestsComponent,
     TestprofileComponent,
-    TestdetailsComponent
+    TestdetailsComponent,
+    TestlabComponent,
+    ExecutionstudioComponent
   ],
   imports: [
     AppRoutingModule,

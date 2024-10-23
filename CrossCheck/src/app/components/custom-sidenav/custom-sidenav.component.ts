@@ -32,13 +32,13 @@ export class CustomSidenavComponent {
       route: 'accounts'
     },
     {
-      icon: 'science',
-      label: 'Build Tests',
+      icon: 'code',
+      label: 'Development Studio',
       route: 'buildtest'
     },
     {
-      icon: 'play_arrow',
-      label: 'Execute Tests',
+      icon: 'science',
+      label: 'Test Lab',
       route: 'executetests'
     },
     {

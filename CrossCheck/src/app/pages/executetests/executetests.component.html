@@ -1,6 +1,6 @@
 <div style="margin:10px;">
   <h6 style="text-align: center;">
-    Build Tests
+    Execution Studio
   </h6>
   <div class="button-container">
     <div class="dropdown-row">
@@ -92,7 +92,7 @@
       <ng-container matColumnDef="execute">
         <th mat-header-cell *matHeaderCellDef>Execute</th>
         <td mat-cell *matCellDef="let element">
-          <button mat-icon-button color="blue" (click)="executeRow(element)">
+          <button mat-icon-button color="blue" (click)="executeTest(element)">
             <mat-icon>play_arrow</mat-icon>
           </button>
         </td>

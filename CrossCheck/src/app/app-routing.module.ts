@@ -10,15 +10,10 @@ import { ExecutetestsComponent } from './pages/executetests/executetests.compone
 import { BuildtestsComponent } from './pages/buildtests/buildtests.component';
 
 const routes: Routes = [
-  { 
+  {
     path: '',
     pathMatch: 'full',
     redirectTo: 'login'
-  },
-  
-  {
-    path: 'buildtest',
-    component: BuildtestsComponent
   },
   {
     path: 'login',
@@ -37,13 +32,18 @@ const routes: Routes = [
     component: DashboardComponent
   },
   {
+    path: 'buildtest',
+    component: BuildtestsComponent
+  },
+  {
+    path: 'executetests',
+    component: ExecutetestsComponent
+  },
+  {
     path: 'executetests',
     component: AnalyticsComponent
   },
-  {
-    path: 'analytics',
-    component: ExecutetestsComponent
-  },
+
   {
     path: 'tests',
     component: ManagetestsComponent

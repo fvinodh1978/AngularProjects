@@ -4,6 +4,8 @@ import { SelectionModel } from '@angular/cdk/collections';
 import { AlertService } from '../../services/alert.service'
 import { MatDialog } from '@angular/material/dialog';
 import { TestprofileComponent } from '../../dialogs/testprofile/testprofile.component';
+import { TestlabComponent } from '../../dialogs/testlab/testlab.component';
+import { ExecutionstudioComponent } from '../../dialogs/executionstudio/executionstudio.component';
 
 export interface PeriodicElement {
   name: string;
@@ -110,9 +112,15 @@ export class ExecutetestsComponent implements OnInit {
       this.dataSource.data.forEach(row => this.selection.select(row));
   }
 
-  executeRow(element: PeriodicElement) {
-    console.log('Executing row:', element);
-    // Add your execution logic here
+  executeTest(record: any) {
+    console.log(record);
+
+    let tableData = Object.entries(record).map(([key, value]) => ({ key, value }));
+    this.dialog.open(ExecutionstudioComponent, {
+      width: '600px',
+      // data: { dataSource: this.dataSource1 }
+      data: { dataSource: record }
+    });
   }
 
   addRow() {

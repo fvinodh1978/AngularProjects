@@ -1,0 +1,18 @@
+<div mat-dialog-content style="align-items: center; border-radius: 4px" class="container" id="containerDiv">
+    <h1 style="font-size:medium; padding-top: 0px; margin-top: 0px; text-align: center;">Test Lab</h1>
+    <div style="display:flex; justify-content: space-between; padding:20px;" class="top-div">
+        <p>Testcase : {{testCaseName}}</p>
+        <p>Test Script : {{testScript}}</p>
+        <p>Profile : {{testProfile}}</p>
+    </div>
+
+    <div class="bottom-div">
+        <textarea placeholder="Enter your text here..." rows="10"></textarea>
+    </div>
+    <div mat-dialog-actions style="margin:0px; padding:0px;">
+        <button mat-button (click)="onClose()">Close</button>
+    </div>
+
+
+    <button class="full-screen-btn" (click)="toggleFullScreen()">&#x26F6;</button>
+</div>
