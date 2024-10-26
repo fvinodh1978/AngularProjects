@@ -1,18 +1,23 @@
-<div mat-dialog-content style="align-items: center; border-radius: 4px" class="container" id="containerDiv">
+<!-- <div mat-dialog-content style="align-items: center; border-radius: 4px" class="container" id="containerDiv"> -->
+<div style="align-items: center; border-radius: 4px" class="container" id="containerDiv">
     <h1 style="font-size:medium; padding-top: 0px; margin-top: 0px; text-align: center;">Test Lab</h1>
-    <div style="display:flex; justify-content: space-between; padding:20px;" class="top-div">
-        <p>Testcase : {{testCaseName}}</p>
-        <p>Test Script : {{testScript}}</p>
-        <p>Profile : {{testProfile}}</p>
+    <div style="align-items:center; display:flex; justify-content: space-between; padding:10px;" class="top-div">
+        <!-- <table mat-table [dataSource]="dataSource"> -->
+            <p style="margin-top:10px;">Testcase : {{data.dataSource.name}}</p>
+            <p style="margin-top:10px;">Test Script : {{data.dataSource.feature}}</p>
+            <p style="margin-top:10px;">Profile : {{data.dataSource.symbol}}</p>
+            <button mat-icon-button color="blue" (click)="executeRow(data.dataSource)">
+                <mat-icon>play_arrow</mat-icon>
+            </button>
+        <!-- </table> -->
     </div>
 
-    <div class="bottom-div">
+    <div class="middle-div">
         <textarea placeholder="Enter your text here..." rows="10"></textarea>
     </div>
-    <div mat-dialog-actions style="margin:0px; padding:0px;">
-        <button mat-button (click)="onClose()">Close</button>
+    <div class="bottom-div" mat-dialog-actions>
+        <button mat-button class="close-btn" (click)="onClose()">Close</button>
     </div>
-
 
     <button class="full-screen-btn" (click)="toggleFullScreen()">&#x26F6;</button>
 </div>
