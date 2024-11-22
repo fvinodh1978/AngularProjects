@@ -1,13 +1,13 @@
 <!-- account.component.html -->
 <!-- <h2 mat-dialog-title>Account Details</h2> -->
 <mat-dialog-content class="mat-dialog-container">
-    <div style="display:flex; justify-content: space-between;">
+    <div style="text-align: center;">
         <div>
-            <a style="font-size: large;">Account details</a>
+            <a style="font-size: large;">Account Details</a>
         </div>
-        <div>
+        <!-- <div>
             <a style="font-size: large;">Logout</a>
-        </div>
+        </div> -->
     </div>
 
     <!-- <mat-nav-list>
@@ -25,9 +25,9 @@
         </a>
         <a mat-list-item class="menu-item" style="display: inline-flex; justify-content: space-between;">
             <span matListItemTitle>Change Password</span>
-            <mat-icon matListItemIcon>exit_to_app</mat-icon>
+            <mat-icon matListItemIcon>lock</mat-icon>
         </a>
-        <a mat-list-item class="menu-item" style="display: inline-flex; justify-content: space-between;">
+        <a mat-list-item class="menu-item" style="display: inline-flex; justify-content: space-between;" (click)="logout()">
             <span matListItemTitle>Logout</span>
             <mat-icon matListItemIcon>exit_to_app</mat-icon>
         </a>

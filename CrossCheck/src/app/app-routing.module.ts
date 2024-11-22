@@ -8,21 +8,13 @@ import { SignupComponent } from './account/signup/signup.component';
 import { AnalyticsComponent } from './pages/dashboard/widgets/analytics/analytics.component';
 import { ExecutetestsComponent } from './pages/executetests/executetests.component';
 import { BuildtestsComponent } from './pages/buildtests/buildtests.component';
+import { AuthGuard } from './services/auth/auth.guard';
+
 
 const routes: Routes = [
-  {
-    path: '',
-    pathMatch: 'full',
-    redirectTo: 'login'
-  },
-  {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: 'signup',
-    component: SignupComponent
-  },
+  { path: 'login', component: LoginComponent },
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'signup', component: SignupComponent },
   {
     path: 'home',
     component: HomeComponent
@@ -39,16 +31,30 @@ const routes: Routes = [
     path: 'executetests',
     component: ExecutetestsComponent
   },
-  {
-    path: 'executetests',
-    component: AnalyticsComponent
-  },
-
-  {
-    path: 'tests',
-    component: ManagetestsComponent
-  }
+  { path: '**', redirectTo: 'login' }
 ];
+
+
+// const routes: Routes = [
+//   {
+//     path: '',
+//     pathMatch: 'full',
+//     redirectTo: 'login'
+//   },
+//   {
+//     path: 'login',
+//     component: LoginComponent
+//   },
+//   {
+//     path: 'executetests',
+//     component: AnalyticsComponent
+//   },
+
+//   {
+//     path: 'tests',
+//     component: ManagetestsComponent
+//   }
+// ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

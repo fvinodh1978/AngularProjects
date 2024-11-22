@@ -1,6 +1,8 @@
 import { Component, HostListener, Inject, Renderer2 } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
+import { RestService } from '../../services/data/rest.service';
+import { Subscription, interval, switchMap } from 'rxjs';
 
 export interface PeriodicElement {
   name: string;
@@ -23,6 +25,7 @@ export interface DialogData {
   templateUrl: './executionstudio.component.html',
   styleUrl: './executionstudio.component.css'
 })
+
 export class ExecutionstudioComponent {
   displayedColumns: string[] = ['key', 'value'];
   testCaseName: string = "";
@@ -37,6 +40,7 @@ export class ExecutionstudioComponent {
   constructor(
     public dialogRef: MatDialogRef<ExecutionstudioComponent>,
     private renderer: Renderer2,
+    private RestService: RestService,
     @Inject(MAT_DIALOG_DATA) public data: DialogData
   ) {
     // this.dataSource = new MatTableDataSource(data.dataSource); // Initialize the data source properly
@@ -84,19 +88,69 @@ export class ExecutionstudioComponent {
     }
   }
 
-  executeRow(data: PeriodicElement) {
+  liveData: string = '';
+  subscription: Subscription = new Subscription;
+  input1: string = '';
+  input2: string = '';
+  selectedOption: string = ''; // Initialize with a default value
+
+  executeTests1(data: PeriodicElement) {
     console.log('Executing row:' + data.feature);
     // Add your execution logic here
+
+    // this.RestApiService.getAllData().subscribe((response) => {
+    this.RestService.fetchOutput().subscribe((response) => {
+      console.log('API response:', response);
+      // this.rapidPage= response[0]['testCaseName'];
+      this.liveData = JSON.stringify(response);
+    });
+
+    // console.log('Button clicked!', event);
+    console.log('Input 1:', this.input1);
+    console.log('Input 2:', this.input2);
+    console.log('Selected Option:', this.selectedOption);
+    const response = '{"data": "UpdatedPage"}';
+
+    console.log('Received Data:', this.liveData);
+    // Add your custom logic here
   }
 
   @HostListener('window:resize', ['$event'])
-  onResize(event:Event) {
+  onResize(event: Event) {
     const containerDiv = document.getElementById('containerDiv');
     if (containerDiv) {
       if (this.isFullScreen) {
         containerDiv.style.width = '100vw';
         containerDiv.style.height = '100vh';
       }
+    }
+  }
+
+  executeTests(data: PeriodicElement) {
+    this.subscription = interval(5000).pipe(
+      switchMap(() => this.RestService.fetchOutput())
+    ).subscribe(data => {
+      // this.liveData = data.output;
+      this.liveData += `${data.output}`;
+    });
+  }
+
+  terminateScript() {
+    this.RestService.terminateScript().subscribe(response => {
+      console.log('Script terminated:', response.status);
+    });
+  }
+
+  // ngOnInit() {
+  //   this.subscription = interval(5000).pipe(
+  //     switchMap(() => this.RestService.fetchOutput())).subscribe(data => {
+  //       this.liveData += `${data.output}`;
+  //     });
+  // }
+
+  ngOnDestroy() {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
     }
   }
 }

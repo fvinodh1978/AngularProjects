@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
-import { AuthService } from '../../services/auth.service';
+import { AuthService } from '../../services/auth/auth.service';
 import { Router } from '@angular/router';
 import { HotToastService } from '@ngneat/hot-toast';
 
@@ -66,7 +66,7 @@ export class LoginComponent implements OnInit {
 
       // this.authService.login(username!, password!).subscribe(() => { this.router.navigate(['/home']) });
       // Login Logic
-      this.authService.login(username!, password!).subscribe({
+      this.authService.login({"username":username!,"password":password!}).subscribe({
         next: (res) => { this.router.navigate(['/home']) },
         error: (err) => { this.onLoginFailure() }
       })

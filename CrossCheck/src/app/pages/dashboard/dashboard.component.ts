@@ -1,5 +1,5 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
-import { DashboardService } from '../../services/dashboard.service';
+import { DashboardService } from '../../services/dashboard1.service';
 import { ViewsComponent } from './widgets/views/views.component';
 import { SubscribersComponent } from './widgets/subscribers/subscribers.component';
 import { AnalyticsComponent } from './widgets/analytics/analytics.component';

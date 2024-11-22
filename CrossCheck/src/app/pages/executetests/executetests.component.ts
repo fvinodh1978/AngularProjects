@@ -44,7 +44,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
 
 export class ExecutetestsComponent implements OnInit {
-  displayedColumns: string[] = ['select', 'position', 'name', 'feature', 'weight', 'symbol', 'execute', 'delete'];
+  displayedColumns: string[] = ['select', 'position', 'name', 'feature', 'weight', 'symbol', 'execute'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
   selectedValue: string = '';
   selection = new SelectionModel<PeriodicElement>(true, []);

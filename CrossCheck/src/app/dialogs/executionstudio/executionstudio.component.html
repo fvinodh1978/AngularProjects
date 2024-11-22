@@ -1,19 +1,29 @@
 <!-- <div mat-dialog-content style="align-items: center; border-radius: 4px" class="container" id="containerDiv"> -->
 <div style="align-items: center; border-radius: 4px" class="container" id="containerDiv">
     <h1 style="font-size:medium; padding-top: 0px; margin-top: 0px; text-align: center;">Test Lab</h1>
-    <div style="align-items:center; display:flex; justify-content: space-between; padding:10px;" class="top-div">
+    <div style="align-items:center; display:flex; justify-content: space-between; padding:0px 50px 0px 50px;"
+        class="top-div">
         <!-- <table mat-table [dataSource]="dataSource"> -->
-            <p style="margin-top:10px;">Testcase : {{data.dataSource.name}}</p>
-            <p style="margin-top:10px;">Test Script : {{data.dataSource.feature}}</p>
-            <p style="margin-top:10px;">Profile : {{data.dataSource.symbol}}</p>
-            <button mat-icon-button color="blue" (click)="executeRow(data.dataSource)">
-                <mat-icon>play_arrow</mat-icon>
+        <p style="margin-top:10px;">Testcase : {{data.dataSource.name}}</p>
+        <p style="margin-top:10px;">Test Script : {{data.dataSource.feature}}</p>
+        <p style="margin-top:10px;">Profile : {{data.dataSource.symbol}}</p>
+        <div>
+            <button mat-icon-button color="primary" (click)="executeTests(data.dataSource)">
+                <mat-icon matTooltip="Execute Tests">play_arrow</mat-icon>
             </button>
+            <button mat-icon-button color="primary" (click)="terminateScript()">
+                <mat-icon matTooltip="Cancel Tests">highlight_off</mat-icon>
+            </button>
+        </div>
         <!-- </table> -->
     </div>
 
     <div class="middle-div">
-        <textarea placeholder="Enter your text here..." rows="10"></textarea>
+        <textarea placeholder="Enter your text here..." rows="10" [(ngModel)]="liveData"></textarea>
+        <!-- <mat-form-field class="textarea">
+            <mat-label>Test Results</mat-label>
+            <textarea matInput [(ngModel)]="liveData" rows="10"></textarea>
+        </mat-form-field> -->
     </div>
     <div class="bottom-div" mat-dialog-actions>
         <button mat-button class="close-btn" (click)="onClose()">Close</button>

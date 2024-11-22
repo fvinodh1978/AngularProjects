@@ -1,8 +1,9 @@
 import { Component, inject } from '@angular/core';
 import { FormGroup, FormControl, Validators, ValidatorFn, AbstractControl, ValidationErrors } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '../../services/auth.service';
+// import { AuthService } from '../../services/auth1.service';
 import { HotToastService } from '@ngneat/hot-toast';
+import { AuthService } from '../../services/auth/auth.service';
 
 export function passwordsMatchValidators(): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {
