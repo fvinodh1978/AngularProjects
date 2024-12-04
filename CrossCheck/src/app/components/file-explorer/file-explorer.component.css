@@ -1,0 +1,22 @@
+.file-explorer-container {
+  max-width: 600px;
+  margin: auto;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.file-tree {
+  background: #f9f9f9;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.mat-tree-node,
+.mat-nested-tree-node {
+  padding: 4px 0;
+}
+
+.mat-icon-rtl-mirror {
+  transform: scaleX(-1);
+}

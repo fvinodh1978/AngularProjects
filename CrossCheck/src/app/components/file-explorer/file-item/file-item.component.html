@@ -1,0 +1,9 @@
+<div>
+    <span *ngIf="file.type === 'directory'">{{ file.name }}/</span>
+    <span *ngIf="file.type === 'file'">{{ file.name }}</span>
+    <ul *ngIf="file.type === 'directory' && file.children">
+        <li *ngFor="let child of file.children">
+            <!-- <app-file-item1 [file]="child"></app-file-item> -->
+        </li>
+    </ul>
+</div>

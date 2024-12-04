@@ -1,34 +1,154 @@
+.content-container {
+  display: flex;
+  flex-direction: column;
+  /* Align children vertically */
+  height: 100vh;
+  /* Full viewport height */
+  justify-content: space-between;
+  /* Ensure content and paginator stay separate */
+}
+
+
+.mat-sidenav-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  transition: all 500ms ease-in-out;
+}
+
+.content {
+  padding: 10px;
+}
+
+mat-toolbar {
+  position: relative;
+  z-index: 5;
+  justify-content: space-between;
+}
+
 .button-container {
-    display: flex;
-    /* justify-content: flex-end;*/
-    justify-content: space-between;
-    margin-bottom: 10px;
-    /* Adjust as needed */
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  /* Adjust as needed */
 }
 
 .mat-header-row {
-    position: sticky;
-    top: 0;
-    z-index: 2;
-    /* Ensure it stays on top of the scrolling rows */
-    background-color: white;
-    /* or whatever your header background is */
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  /* Ensure it stays on top of the scrolling rows */
+  background-color: white;
+  /* or whatever your header background is */
 }
 
+
 .table-container {
-    padding: 0px;
-    max-height: 400px;
-    /* Set the max height you want for your table */
-    overflow-y: auto;
-    /* Enable vertical scrolling */
-    display: block;
-    /* Ensure it takes block space */
+  flex-grow: 1;
+  /* Allow table container to grow and take available space */
+  overflow-y: auto;
+  /* Enable vertical scrolling */
+  overflow-x: auto;
+  /* Enable horizontal scrolling */
 }
 
 .sticky-header {
-    position: sticky;
-    top: 0;
-    z-index: 1;
-    background-color: white;
-    /* Ensure the background matches your table */
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: white;
+  /* Ensure the background matches your table */
+}
+
+.narrow-column {
+  max-width: 50px;
+  /* Adjust the width as needed */
+  overflow: hidden;
+  /* Hide any overflowing content */
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.paginator {
+  align-self: flex-end;
+}
+
+
+.paginator-container {
+  display: flex;
+  justify-content: center; /* Center the paginator horizontally */
+  background-color: white; /* Match the paginator's background color to the page */
+  padding: 10px 0;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+mat-sidenav,
+mat-sidenav-content {
+  transition: all 500ms ease-in-out;
+}
+
+
+
+
+
+
+.app-container {
+  height: 100vh !important;
+  /* height: 100%; */
+  padding: 0px;
+  margin: 0px;
+}
+
+mat-sidenav-container {
+  height: calc(100vh - 64px);
+  border-radius: 0;
+}
+
+/* Remove the rounding at the corners */
+.file-explorer-container {
+  border-radius: 0;
+}
+
+.mat-tree-node,
+.mat-nested-tree-node {
+  border-radius: 0;
+}
+
+.mat-tree-node .mat-icon-button,
+.mat-nested-tree-node .mat-icon-button {
+  border-radius: 0;
+}
+
+
+/* Set border-radius to 0 for all elements to ensure sharp corners */
+.content-container,
+.mat-sidenav-container,
+.mat-sidenav,
+.mat-sidenav-content,
+.mat-toolbar,
+.table-container,
+.paginator-container {
+  border-radius: 0;
+}
+
+.mat-tree-node,
+.mat-nested-tree-node,
+.mat-tree-node .mat-icon-button,
+.mat-nested-tree-node .mat-icon-button {
+  border-radius: 0;
+}
+
+/* Other necessary styles can remain as they are */
+
+
+/* .matsidenav-container{
+height: calc(100vh - 64px);
+} */
+
+mat-sidenav {
+  background-color: rgb(241, 241, 250);
+}
+
+mat-sidenav,
+mat-sidenav-content {
+  /* transition: all 500ms ease-in-out; */
 }

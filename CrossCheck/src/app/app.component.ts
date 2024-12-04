@@ -18,13 +18,6 @@ export class AppComponent {
   @ViewChild('openButton', { read: ElementRef }) openButton!: ElementRef;
   constructor(public dialog: MatDialog) { }
 
-  // openAccountDialog(): void {
-  //   this.dialog.open(DialogComponent, {
-  //     width: '275px',
-  //     height: '350px'
-  //   });
-  // }
-
   openAccountDialog(): void {
     const rect = this.openButton.nativeElement.getBoundingClientRect();
     const dialogConfig = new MatDialogConfig();

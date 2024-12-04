@@ -25,5 +25,4 @@ export class TestdetailsComponent {
     onClose(): void {
       this.dialogRef.close();
     }
-  
 }

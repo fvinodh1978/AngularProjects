@@ -1,0 +1,69 @@
+<div class="file-browser-container">
+
+    <!-- New div with text and create folder icon button at the top -->
+    <div class="top-button-container" style="display: flex; align-items: center; justify-content: space-between;">
+        <span style="margin-right: 8px;">Explorer</span>
+        <div>
+            <button mat-icon-button color="primary" (click)="onCreateFolderClick()">
+                <mat-icon matTooltip="Open Floder">folder_open</mat-icon>
+            </button>
+            <button mat-icon-button color="primary" (click)="onCreateFileClick()">
+                <mat-icon matTooltip="Create File">note_add</mat-icon>
+            </button>
+
+            <button mat-icon-button color="primary" (click)="onCreateFileClick()">
+                <mat-icon matTooltip="Refresh">refresh</mat-icon>
+            </button>
+        </div>
+    </div>
+    <div class="file-browser-content"> <!-- First div content here -->
+        <mat-tree #tree [dataSource]="dataSource" [childrenAccessor]="childrenAccessor">
+            <!-- This is the tree node template for leaf nodes -->
+            <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding showCheckBox="true" (click)="selectNode(node)" >
+                <!-- use a disabled button to provide padding for tree leaf -->
+                <button mat-icon-button disabled></button>
+
+                <!-- <mat-icon [ngClass]="{'folder-icon': node.type === 'directory', 'file-icon': node.type === 'file'}">
+                    {{ node.type === 'directory' ? 'folder' : 'insert_drive_file' }}
+                </mat-icon> -->
+
+                <ng-container *ngIf="node.type === 'file'">
+                    <mat-checkbox [checked]="node.checked" (change)="onCheckboxChange(node, $event)">
+                        <!-- {{ node.name }} -->
+                        <span class="node-name">{{ node.name }}</span>
+                    </mat-checkbox>
+                </ng-container>
+                <ng-container *ngIf="node.type === 'directory'">
+                    <!-- {{ node.name }}-->
+                    <span class="node-name">{{ node.name }}</span>
+                </ng-container>
+
+            </mat-tree-node>
+            <!-- This is the tree node template for expandable nodes -->
+            <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding matTreeNodeToggle
+                [cdkTreeNodeTypeaheadLabel]="node.name" (click)="selectNode(node)" >
+                <button mat-icon-button matTreeNodeToggle [attr.aria-label]="'Toggle ' + node.name">
+                    <mat-icon class="mat-icon-rtl-mirror">
+                        {{tree.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+                    </mat-icon>
+                </button>
+
+                <!-- <mat-icon [ngClass]="{'folder-icon': node.type === 'directory', 'file-icon': node.type === 'file'}">
+                    {{ node.type === 'directory' ? 'folder' : 'insert_drive_file' }}
+                </mat-icon> -->
+
+                <ng-container *ngIf="node.type === 'directory'">
+                    <span class="node-name">{{ node.name }}</span>
+                    <!-- {{ node.name }} -->
+                </ng-container>
+            </mat-tree-node>
+        </mat-tree>
+    </div>
+    <div style="align-items: center; color:white" class="file-browser-sidebar">
+        <button mat-raised-button color="primary" style="margin-top: 8px;" (click)="discoverTests()">Discover
+            Tests</button>
+    </div>
+    <div *ngIf="isLoading" class="spinner-overlay">
+        <mat-progress-spinner [diameter]="50" mode="indeterminate"></mat-progress-spinner>
+    </div>
+</div>

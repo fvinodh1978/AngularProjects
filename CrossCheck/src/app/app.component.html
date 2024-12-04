@@ -1,28 +1,23 @@
 <div>
-  <div *ngIf="router.url !== '/' && router.url !== '/login' && router.url !== '/signup'">
+  <div *ngIf="router.url !== '/' && router.url !== '/login' && router.url !== '/signup' && router.url !== '/buildtest'">
     <mat-toolbar class="mat-elevation-z3">
-
-      <div style ="display: flex;">
-        <button mat-icon-button (click)="collapsed.set(!collapsed())">
-          <mat-icon>
-            menu
-          </mat-icon>
-        </button>
-        <h1 style ="padding-top: 5px ;padding-left: 10px ;">MM Cross Check</h1>
-      </div>
-
+      <button mat-icon-button (click)="collapsed.set(!collapsed())">
+        <mat-icon>
+          menu
+        </mat-icon>
+      </button>
       <button mat-icon-button class="notify-icon">
         <mat-icon>
           notifications_none
         </mat-icon>
       </button>
-      <button mat-icon-button class="account-icon"   #openButton  (click)="openAccountDialog()" >
+      <button mat-icon-button class="account-icon" #openButton (click)="openAccountDialog()">
         <mat-icon>
           account_circle
         </mat-icon>
       </button>
     </mat-toolbar>
-    <mat-sidenav-container class="matsidenav-container">
+    <mat-sidenav-container class="matsidenav-container" *ngIf="router.url === '/home'">
       <mat-sidenav opened mode="side" [style.width]="sidenavWidth()">
         <app-custom-sidenav [collapsed]="collapsed()"></app-custom-sidenav>
       </mat-sidenav>
@@ -32,20 +27,27 @@
       </mat-sidenav-content>
 
     </mat-sidenav-container>
-    <!-- <div>
-      <app-footer></app-footer>
-    </div> -->
-  </div>
-
-  <div *ngIf="router.url == '/' || router.url == '/login' || router.url == '/signup'" height="100%">
-    <router-outlet></router-outlet>
-    <!-- <app-footer></app-footer> -->
   </div>
 </div>
+<div class="matsidenav-container"  *ngIf="router.url === '/buildtest'">
+  <!-- <mat-sidenav opened mode="side" [style.width]="sidenavWidth()">
+        <app-custom-sidenav [collapsed]="collapsed()"></app-custom-sidenav>
+      </mat-sidenav> -->
 
-<!-- <div class="app-container">
-  <div *ngIf="router.url == '/' || router.url == '/login'" height="100%">
-    <app-login></app-login>
-    <app-footer></app-footer>
-  </div>
-</div> -->
+  <router-outlet></router-outlet>
+
+</div>
+
+<div class="matsidenav-container"  *ngIf="router.url === '/executetests'">
+  <!-- <mat-sidenav opened mode="side" [style.width]="sidenavWidth()">
+        <app-custom-sidenav [collapsed]="collapsed()"></app-custom-sidenav>
+      </mat-sidenav> -->
+
+  <router-outlet></router-outlet>
+
+</div>
+
+<div *ngIf="router.url == '/' || router.url == '/login' || router.url == '/signup'" height="100%">
+  <router-outlet></router-outlet>
+  <!-- <app-footer></app-footer> -->
+</div>

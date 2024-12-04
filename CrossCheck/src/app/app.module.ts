@@ -58,6 +58,11 @@ import { TestdetailsComponent } from './dialogs/testdetails/testdetails.componen
 import { TestprofileComponent } from './dialogs/testprofile/testprofile.component';
 import { TestlabComponent } from './dialogs/testlab/testlab.component';
 import { ExecutionstudioComponent } from './dialogs/executionstudio/executionstudio.component';
+import { FileExplorerComponent } from './components/file-explorer/file-explorer.component';
+import { FileItemComponent } from './components/file-explorer/file-item/file-item.component';
+import { MatTreeModule } from '@angular/material/tree';
+import { FileExplorer1Component } from './components/file-explorer1/file-explorer1.component';
+import { SummaryComponent } from './dialogs/discovertests/summary/summary.component';
 
 @NgModule({
   declarations: [
@@ -86,7 +91,11 @@ import { ExecutionstudioComponent } from './dialogs/executionstudio/executionstu
     TestprofileComponent,
     TestdetailsComponent,
     TestlabComponent,
-    ExecutionstudioComponent
+    ExecutionstudioComponent,
+    FileExplorerComponent,
+    FileItemComponent,
+    FileExplorer1Component,
+    SummaryComponent
   ],
   imports: [
     AppRoutingModule,
@@ -102,6 +111,7 @@ import { ExecutionstudioComponent } from './dialogs/executionstudio/executionstu
     ReactiveFormsModule,
     RouterModule,
     HttpClientModule,
+    MatTreeModule,
     NgComponentOutlet,
     MatDialogModule,
     MatIcon,
@@ -120,7 +130,8 @@ import { ExecutionstudioComponent } from './dialogs/executionstudio/executionstu
     MatDatepickerModule,
     MatNativeDateModule,
     MatAutocompleteModule,
-    MatRadioModule
+    MatRadioModule,
+    MatPaginatorModule
   ],
   exports: [WidgetComponent], // Export the component here
   providers: [

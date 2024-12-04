@@ -1,0 +1,170 @@
+.mat-tree-node,
+.mat-nested-tree-node {
+    display: flex;
+    align-items: center;
+    /* padding: 2px 0; */
+    /* Reduce padding to decrease spacing between nodes */
+}
+
+.mat-tree-node button,
+.mat-nested-tree-node button {
+    /* margin-right: 8px; */
+    flex-shrink: 0;
+
+}
+
+.example-tree-invisible {
+    display: none;
+}
+
+.mat-tree-node,
+.mat-nested-tree-node {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.mat-tree-node {
+    width: 100%;
+    /* box-sizing: border-box; */
+    /* padding-top: 2px;  */
+    /* padding-bottom: 2px */
+}
+
+
+.mat-nested-tree-node {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.mat-icon {
+    margin-right: 8px;
+}
+
+.folder-icon {
+    color: #FFD700;
+    /* Natural gold color for folders */
+}
+
+.file-icon {
+    color: white;
+    /* White color for file icons */
+}
+
+.node-name {
+    font-size: 15px;
+    padding: 0px;
+    /* Adjust the font size as needed */
+}
+
+.file-browser-container {
+    display: flex;
+    flex-direction: column;
+    /* Align children vertically */
+    height: 90vh;
+    /* Full viewport height */
+}
+
+.file-browser-content {
+    flex: 8;
+    /* 8 parts out of 10, equals 80% */
+    /* padding: 10px; */
+    /* Example padding */
+    overflow-y: auto;
+    /* Allow vertical scrolling */
+    overflow-x: auto;
+    /* Allow horizontal scrolling */
+}
+
+.top-button-container{
+    flex: 1;
+    /* 8 parts out of 10, equals 80% */
+    /* padding: 10px; */
+    /* Example padding */
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.file-browser-sidebar {
+    flex: 1;
+    /* 2 parts out of 10, equals 20% */
+    /* padding: 10px; */
+    /* Example padding */
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center items horizontally */
+}
+
+.spinner-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.8);
+    z-index: 1000;
+    /* Ensures it sits above other elements */
+}
+
+mat-sidenav,
+mat-sidenav-content {
+    transition: all 500ms ease-in-out;
+}
+
+
+/* Set border-radius to 0 for all elements to ensure sharp corners */
+.content-container,
+.mat-sidenav-container,
+.mat-sidenav,
+.mat-sidenav-content,
+.mat-toolbar,
+.table-container,
+.paginator-container {
+  border-radius: 0;
+}
+
+/* Apply a thin right border to highlight it */
+.content-container,
+.mat-sidenav-container,
+.mat-sidenav,
+.mat-sidenav-content,
+.mat-toolbar,
+.table-container,
+.paginator-container {
+  border-right: 1px solid #000;  /* Change #000 to your preferred color */
+}
+
+/* Tree Nodes: Ensure sharp corners */
+.mat-tree-node,
+.mat-nested-tree-node,
+.mat-tree-node .mat-icon-button,
+.mat-nested-tree-node .mat-icon-button {
+  border-radius: 0;
+}
+
+/* Apply a thin right border to tree nodes */
+.mat-tree-node,
+.mat-nested-tree-node {
+  border-right: 1px solid #000;  /* Change #000 to your preferred color */
+}
+
+
+/* Custom focus indicator for mat-icon-button */
+.mat-icon-button:focus {
+    outline: none; /* Remove the default outline */
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2); /* Custom smaller shadow */
+    border-radius: 20%; /* Ensure the focus ring is round */
+  }
+  
+  /* Optionally, reduce padding to make the button smaller */
+  .mat-icon-button {
+    padding: 4px; /* Adjust padding as needed */
+  }
+  

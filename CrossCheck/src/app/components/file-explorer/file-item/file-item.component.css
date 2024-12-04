@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .file-browser {
+    flex: 1;
+    background-color: #d0d0d0;
+    padding: 20px;
+    max-width: 300px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding-left: 20px;
+  }
+  
+  ul li::before {
+    content: '📁 ';
+    display: inline-block;
+    margin-right: 5px;
+  }
+  
+  button {
+    margin: 5px;
+  }
+  
